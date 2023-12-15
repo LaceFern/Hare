@@ -8,4 +8,6 @@
 	"offloaded_object_num": 32768, 
 	"offloaded_object_seg_num": 1,
 	"offloaded_object_seg_size": 80,
+	"K":800,
+	"waiting_time_ms":50
 }
