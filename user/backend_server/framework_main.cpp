@@ -36,10 +36,10 @@ void User::process_query(){
 	user->receive_query(sizeof(send_kr_payload));
 	auto rcv_kr_payload = (kvs_request_payload *)(user->query_payload);
 	
-	uint_key key = rcv_kr_payload->key_byte_list[KEY_BYTE_NUM - 1] |
-                    rcv_kr_payload->key_byte_list[KEY_BYTE_NUM - 2] << 8 |
-                    rcv_kr_payload->key_byte_list[KEY_BYTE_NUM - 3] << 16 |
-                    rcv_kr_payload->key_byte_list[KEY_BYTE_NUM - 4] << 24;
+	uint_key key = rcv_kr_payload->key_byte_list[0] |
+                    rcv_kr_payload->key_byte_list[1] << 8 |
+                    rcv_kr_payload->key_byte_list[2] << 16 |
+                    rcv_kr_payload->key_byte_list[3] << 24;
 
     if(rcv_kr_payload->op_type == OP_GET && is_replacing(rcv_kr_payload->key_byte_list)){
 		auto send_kr_payload = (kvs_response_payload *)(user->response_payload);
@@ -54,10 +54,10 @@ void User::process_query(){
             for(uint32_t j = 0; j < VALUE_BYTE_NUM; j++){
                 send_kr_payload->value_byte_list[j] = 0;
             }				
-			send_kr_payload->value_byte_list[VALUE_BYTE_NUM - 1] = value & 0xff;
-			send_kr_payload->value_byte_list[VALUE_BYTE_NUM - 2] = (value >> 8) & 0xff;
-			send_kr_payload->value_byte_list[VALUE_BYTE_NUM - 3] = (value >> 16) & 0xff;
-			send_kr_payload->value_byte_list[VALUE_BYTE_NUM - 4] = (value >> 24) & 0xff;
+			send_kr_payload->value_byte_list[0] = value & 0xff;
+			send_kr_payload->value_byte_list[1] = (value >> 8) & 0xff;
+			send_kr_payload->value_byte_list[2] = (value >> 16) & 0xff;
+			send_kr_payload->value_byte_list[3] = (value >> 24) & 0xff;
 			user->send_response(sizeof(send_kr_payload));
     	}
 		stats_update(rcv_kr_payload->key_byte_list);
@@ -67,7 +67,10 @@ void User::process_query(){
 void User::move_appdata_server2switch(){
 	auto send_dm_payload = (data_movement_payload *)(user->control_payload);
 	for(int i = 0; i < replace_num; i++){
-		uint_key key = obj_server_list[i][3] << 24 | obj_server_list[i][2] << 16 | obj_server_list[i][1] << 8 | obj_server_list[i][0];
+		uint_key key = obj_server_list[i][3] << 24 | 
+						obj_server_list[i][2] << 16 | 
+						obj_server_list[i][1] << 8 | 
+						obj_server_list[i][0];
 		auto it = KVmapping.find(key);
 		if (it != myMap.end()){
 			send_dm_payload->op_type = OP_PUT;
@@ -75,6 +78,11 @@ void User::move_appdata_server2switch(){
             for(uint32_t j = 0; j < VALUE_BYTE_NUM; j++){
                 send_dm_payload->value_byte_list[j] = 0;
             }
+			uint_value value = KVmapping[key];
+			send_dm_payload->value_byte_list[0] = value & 0xff;
+			send_dm_payload->value_byte_list[1] = (value >> 8) & 0xff;
+			send_dm_payload->value_byte_list[2] = (value >> 16) & 0xff;
+			send_dm_payload->value_byte_list[3] = (value >> 24) & 0xff;
 		}
 	}
 }
