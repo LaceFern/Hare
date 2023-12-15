@@ -5,5 +5,5 @@
 	"backend_server_thread_num": 2,
 	"backend_server_thread_UDPports": [5001, 5002],
 	"offloaded_object_size": 80,
-	"offloaded_object_num": 32768
+	"offloaded_object_num": 32768 
 }
