@@ -66,7 +66,54 @@
     KVS_SLICE(19, op_code, index, value) \
     KVS_SLICE(20, op_code, index, value)
 
+#define GET(i, index, value)\
+    value##_##i = value_read##_##i.execute(index);
 
+#define PUT(i, index, value)\
+    value_write##_##i.execute(index);
 
+KVS_GET_VALUE(index, value)\
+    GET(0, index, value)\
+    GET(1, index, value)\
+    GET(2, index, value)\
+    GET(3, index, value)\
+    GET(4, index, value)\
+    GET(5, index, value)\
+    GET(6, index, value)\
+    GET(7, index, value)\
+    GET(8, index, value)\
+    GET(9, index, value)\
+    GET(10, index, value)\
+    GET(11, index, value)\
+    GET(12, index, value)\
+    GET(13, index, value)\
+    GET(14, index, value)\
+    GET(15, index, value)\
+    GET(16, index, value)\
+    GET(17, index, value)\
+    GET(18, index, value)\
+    GET(19, index, value)
+
+KVS_PUT_VALUE(index, value)
+    PUT(0, index, value)\
+    PUT(1, index, value)\
+    PUT(2, index, value)\
+    PUT(3, index, value)\
+    PUT(4, index, value)\
+    PUT(5, index, value)\
+    PUT(6, index, value)\
+    PUT(7, index, value)\
+    PUT(8, index, value)\
+    PUT(9, index, value)\
+    PUT(10, index, value)\
+    PUT(11, index, value)\
+    PUT(12, index, value)\
+    PUT(13, index, value)\
+    PUT(14, index, value)\
+    PUT(15, index, value)\
+    PUT(16, index, value)\
+    PUT(17, index, value)\
+    PUT(18, index, value)\
+    PUT(19, index, value)
 
 #endif //_KVS_P4_
