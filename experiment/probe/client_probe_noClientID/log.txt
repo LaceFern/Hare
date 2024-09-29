@@ -1,0 +1,757 @@
+rte_socket_id = 0create enabled ports
+	ports: 0 
+create enabled cores
+	cores: 0 1 2 3 4 5 6 7 8 9 10 11 24 25 26 27 28 29 30 set up 19 RX queues per port and 19 TX queues per port
+create mbuf pool
+create mbuf pool
+create mbuf pool
+create mbuf pool
+create mbuf pool
+create mbuf pool
+create mbuf pool
+create mbuf pool
+create mbuf pool
+create mbuf pool
+create mbuf pool
+create mbuf pool
+create mbuf pool
+create mbuf pool
+create mbuf pool
+create mbuf pool
+create mbuf pool
+create mbuf pool
+create mbuf pool
+initiaze queues and start port 0, MAC address:B8:59:9F:E9:6B:1C
+check: rx_q = 0, port_udp = 35
+check: rx_q = 1, port_udp = 1112
+check: rx_q = 2, port_udp = 1113
+check: rx_q = 3, port_udp = 1114
+check: rx_q = 4, port_udp = 1115
+check: rx_q = 5, port_udp = 1116
+check: rx_q = 6, port_udp = 1117
+check: rx_q = 7, port_udp = 1118
+check: rx_q = 8, port_udp = 1119
+check: rx_q = 9, port_udp = 1120
+check: rx_q = 10, port_udp = 1121
+check: rx_q = 11, port_udp = 1122
+check: rx_q = 12, port_udp = 1123
+check: rx_q = 13, port_udp = 1124
+check: rx_q = 14, port_udp = 1125
+check: rx_q = 15, port_udp = 1126
+check: rx_q = 16, port_udp = 1127
+check: rx_q = 17, port_udp = 1128
+check: rx_q = 18, port_udp = 1129
+	port 0 link up - speed 100000 Mbps - full-duplex
+check link status finish: all ports are up
+numa_id_of_port = 0
+1675775989 entering TX loop for write on lcore 1, numa_id_of_lcore = 0
+hotChangedNum: 512
+traceFile: ./trace/res_zipf/a0.99_n1048576_rN1048576_sd1.txt
+1675775989 entering TX loop for write on lcore 2, numa_id_of_lcore = 0
+idx=0, lockid-d = 19787, lockid-u = 19787
+1675775989 entering TX loop for write on lcore 3, numa_id_of_lcore = 0
+hotChangedNum: 512
+traceFile: ./trace/res_zipf/a0.99_n1048576_rN1048576_sd1.txt
+1675775989 entering TX loop for write on lcore 4, numa_id_of_lcore = 0
+idx=0, lockid-d = 19787, lockid-u = 19787
+hotChangedNum: 512
+traceFile: ./trace/res_zipf/a0.99_n1048576_rN1048576_sd1.txt
+1675775989 entering TX loop for write on lcore 5, numa_id_of_lcore = 0
+idx=0, lockid-d = 19787, lockid-u = 19787
+hotChangedNum: 512
+traceFile: ./trace/res_zipf/a0.99_n1048576_rN1048576_sd1.txt
+1675775989 entering TX loop for write on lcore 6, numa_id_of_lcore = 0
+hotChangedNum: 512
+traceFile: ./trace/res_zipf/a0.99_n1048576_rN1048576_sd1.txt
+idx=0, lockid-d = 19787, lockid-u = 19787
+1675775989 entering TX loop for write on lcore 7, numa_id_of_lcore = 0
+idx=0, lockid-d = 19787, lockid-u = 19787
+hotChangedNum: 512
+traceFile: ./trace/res_zipf/a0.99_n1048576_rN1048576_sd1.txt
+1675775989 entering TX loop for write on lcore 8, numa_id_of_lcore = 0
+hotChangedNum: 512
+traceFile: ./trace/res_zipf/a0.99_n1048576_rN1048576_sd1.txt
+idx=0, lockid-d = 19787, lockid-u = 19787
+idx=0, lockid-d = 19787, lockid-u = 19787
+1675775989 entering TX loop for write on lcore 9, numa_id_of_lcore = 0
+hotChangedNum: 512
+traceFile: ./trace/res_zipf/a0.99_n1048576_rN1048576_sd1.txt
+1675775989 entering TX loop for write on lcore 10, numa_id_of_lcore = 0
+idx=0, lockid-d = 19787, lockid-u = 19787
+1675775989 entering TX loop for write on lcore 11, numa_id_of_lcore = 0
+hotChangedNum: 512
+traceFile: ./trace/res_zipf/a0.99_n1048576_rN1048576_sd1.txt
+1675775989 entering TX loop for write on lcore 24, numa_id_of_lcore = 0
+hotChangedNum: 512
+traceFile: ./trace/res_zipf/a0.99_n1048576_rN1048576_sd1.txt
+1675775989 entering TX loop for write on lcore 25, numa_id_of_lcore = 0
+1675775989 entering TX loop for write on lcore 26, numa_id_of_lcore = 0
+1675775989 entering TX loop for write on lcore 27, numa_id_of_lcore = 0
+idx=0, lockid-d = 19787, lockid-u = 19787
+1675775989 entering TX loop for write on lcore 28, numa_id_of_lcore = 0
+1675775989 entering TX loop for write on lcore 29, numa_id_of_lcore = 0
+1675775989 entering TX loop for write on lcore 30, numa_id_of_lcore = 0
+1675775989 entering RX loop (master loop) on lcore 0, numa_id_of_lcore = 0
+idx=0, lockid-d = 19787, lockid-u = 19787
+hotChangedNum: 512
+traceFile: ./trace/res_zipf/a0.99_n1048576_rN1048576_sd1.txt
+hotChangedNum: 512
+traceFile: ./trace/res_zipf/a0.99_n1048576_rN1048576_sd1.txt
+hotChangedNum: 512
+traceFile: ./trace/res_zipf/a0.99_n1048576_rN1048576_sd1.txt
+idx=0, lockid-d = 19787, lockid-u = 19787
+hotChangedNum: 512
+traceFile: ./trace/res_zipf/a0.99_n1048576_rN1048576_sd1.txt
+hotChangedNum: 512
+hotChangedNum: 512
+traceFile: ./trace/res_zipf/a0.99_n1048576_rN1048576_sd1.txt
+traceFile: ./trace/res_zipf/a0.99_n1048576_rN1048576_sd1.txt
+hotChangedNum: 512
+traceFile: ./trace/res_zipf/a0.99_n1048576_rN1048576_sd1.txt
+hotChangedNum: 512
+idx=0, lockid-d = 19787, lockid-u = 19787
+idx=0, lockid-d = 19787, lockid-u = 19787
+idx=0, lockid-d = 19787, lockid-u = 19787
+idx=0, lockid-d = 19787, lockid-u = 19787
+idx=0, lockid-d = 19787, lockid-u = 19787
+traceFile: ./trace/res_zipf/a0.99_n1048576_rN1048576_sd1.txt
+idx=0, lockid-d = 19787, lockid-u = 19787
+idx=0, lockid-d = 19787, lockid-u = 19787
+	total!!!!!
+tx	56668972.00	tx_get	0.00	tx_put	0.00	tx_del	0.00
+	rx	18351292.00	rx_getSucc	18351260.00	rx_putSucc	0.00	rx_delSucc	0.00	rx_getFail	0.00	rx_putFail	0.00	rx_delFail	0.00		dropped_pkt	9961636.00
+	total!!!!!
+tx	90834728.00	tx_get	0.00	tx_put	0.00	tx_del	0.00
+	rx	27936456.00	rx_getSucc	27936384.00	rx_putSucc	0.00	rx_delSucc	0.00	rx_getFail	0.00	rx_putFail	0.00	rx_delFail	0.00		dropped_pkt	14081832.00
+	total!!!!!
+tx	88260792.00	tx_get	0.00	tx_put	0.00	tx_del	0.00
+	rx	27529202.00	rx_getSucc	27529298.00	rx_putSucc	0.00	rx_delSucc	0.00	rx_getFail	0.00	rx_putFail	0.00	rx_delFail	0.00		dropped_pkt	13660728.00
+	total!!!!!
+tx	88070528.00	tx_get	0.00	tx_put	0.00	tx_del	0.00
+	rx	27529100.00	rx_getSucc	27529104.00	rx_putSucc	0.00	rx_delSucc	0.00	rx_getFail	0.00	rx_putFail	0.00	rx_delFail	0.00		dropped_pkt	13437968.00
+	total!!!!!
+tx	88007056.00	tx_get	0.00	tx_put	0.00	tx_del	0.00
+	rx	27524732.00	rx_getSucc	27524728.00	rx_putSucc	0.00	rx_delSucc	0.00	rx_getFail	0.00	rx_putFail	0.00	rx_delFail	0.00		dropped_pkt	13460728.00
+	total!!!!!
+tx	88444384.00	tx_get	0.00	tx_put	0.00	tx_del	0.00
+	rx	27519120.00	rx_getSucc	27519060.00	rx_putSucc	0.00	rx_delSucc	0.00	rx_getFail	0.00	rx_putFail	0.00	rx_delFail	0.00		dropped_pkt	13627506.00
+	total!!!!!
+tx	88487448.00	tx_get	0.00	tx_put	0.00	tx_del	0.00
+	rx	27556170.00	rx_getSucc	27556210.00	rx_putSucc	0.00	rx_delSucc	0.00	rx_getFail	0.00	rx_putFail	0.00	rx_delFail	0.00		dropped_pkt	13657516.00
+	total!!!!!
+tx	88205448.00	tx_get	0.00	tx_put	0.00	tx_del	0.00
+	rx	27532130.00	rx_getSucc	27532126.00	rx_putSucc	0.00	rx_delSucc	0.00	rx_getFail	0.00	rx_putFail	0.00	rx_delFail	0.00		dropped_pkt	13546304.00
+	total!!!!!
+tx	88613768.00	tx_get	0.00	tx_put	0.00	tx_del	0.00
+	rx	27555828.00	rx_getSucc	27555816.00	rx_putSucc	0.00	rx_delSucc	0.00	rx_getFail	0.00	rx_putFail	0.00	rx_delFail	0.00		dropped_pkt	13825490.00
+	total!!!!!
+tx	88378496.00	tx_get	0.00	tx_put	0.00	tx_del	0.00
+	rx	27548820.00	rx_getSucc	27548828.00	rx_putSucc	0.00	rx_delSucc	0.00	rx_getFail	0.00	rx_putFail	0.00	rx_delFail	0.00		dropped_pkt	13641330.00
+	total!!!!!
+tx	88395200.00	tx_get	0.00	tx_put	0.00	tx_del	0.00
+	rx	27531864.00	rx_getSucc	27531900.00	rx_putSucc	0.00	rx_delSucc	0.00	rx_getFail	0.00	rx_putFail	0.00	rx_delFail	0.00		dropped_pkt	13688324.00
+	total!!!!!
+tx	88274768.00	tx_get	0.00	tx_put	0.00	tx_del	0.00
+	rx	27573208.00	rx_getSucc	27573208.00	rx_putSucc	0.00	rx_delSucc	0.00	rx_getFail	0.00	rx_putFail	0.00	rx_delFail	0.00		dropped_pkt	13668300.00
+	total!!!!!
+tx	88457728.00	tx_get	0.00	tx_put	0.00	tx_del	0.00
+	rx	27548100.00	rx_getSucc	27548100.00	rx_putSucc	0.00	rx_delSucc	0.00	rx_getFail	0.00	rx_putFail	0.00	rx_delFail	0.00		dropped_pkt	13662552.00
+	total!!!!!
+tx	88381216.00	tx_get	0.00	tx_put	0.00	tx_del	0.00
+	rx	27574980.00	rx_getSucc	27574968.00	rx_putSucc	0.00	rx_delSucc	0.00	rx_getFail	0.00	rx_putFail	0.00	rx_delFail	0.00		dropped_pkt	13662476.00
+	total!!!!!
+tx	88167464.00	tx_get	0.00	tx_put	0.00	tx_del	0.00
+	rx	27552240.00	rx_getSucc	27552236.00	rx_putSucc	0.00	rx_delSucc	0.00	rx_getFail	0.00	rx_putFail	0.00	rx_delFail	0.00		dropped_pkt	13492716.00
+	total!!!!!
+tx	88416288.00	tx_get	0.00	tx_put	0.00	tx_del	0.00
+	rx	27562290.00	rx_getSucc	27562288.00	rx_putSucc	0.00	rx_delSucc	0.00	rx_getFail	0.00	rx_putFail	0.00	rx_delFail	0.00		dropped_pkt	13657758.00
+	total!!!!!
+tx	88295616.00	tx_get	0.00	tx_put	0.00	tx_del	0.00
+	rx	27544860.00	rx_getSucc	27544844.00	rx_putSucc	0.00	rx_delSucc	0.00	rx_getFail	0.00	rx_putFail	0.00	rx_delFail	0.00		dropped_pkt	13644210.00
+	total!!!!!
+tx	88448176.00	tx_get	0.00	tx_put	0.00	tx_del	0.00
+	rx	27581692.00	rx_getSucc	27581716.00	rx_putSucc	0.00	rx_delSucc	0.00	rx_getFail	0.00	rx_putFail	0.00	rx_delFail	0.00		dropped_pkt	13624088.00
+	total!!!!!
+tx	88605792.00	tx_get	0.00	tx_put	0.00	tx_del	0.00
+	rx	27581584.00	rx_getSucc	27581564.00	rx_putSucc	0.00	rx_delSucc	0.00	rx_getFail	0.00	rx_putFail	0.00	rx_delFail	0.00		dropped_pkt	13728198.00
+	total!!!!!
+tx	88299408.00	tx_get	0.00	tx_put	0.00	tx_del	0.00
+	rx	27525060.00	rx_getSucc	27525056.00	rx_putSucc	0.00	rx_delSucc	0.00	rx_getFail	0.00	rx_putFail	0.00	rx_delFail	0.00		dropped_pkt	13550528.00
+	total!!!!!
+tx	88536392.00	tx_get	0.00	tx_put	0.00	tx_del	0.00
+	rx	27450424.00	rx_getSucc	27450464.00	rx_putSucc	0.00	rx_delSucc	0.00	rx_getFail	0.00	rx_putFail	0.00	rx_delFail	0.00		dropped_pkt	13654604.00
+	total!!!!!
+tx	88381720.00	tx_get	0.00	tx_put	0.00	tx_del	0.00
+	rx	27564706.00	rx_getSucc	27564674.00	rx_putSucc	0.00	rx_delSucc	0.00	rx_getFail	0.00	rx_putFail	0.00	rx_delFail	0.00		dropped_pkt	13666514.00
+	total!!!!!
+tx	88357696.00	tx_get	0.00	tx_put	0.00	tx_del	0.00
+	rx	27571832.00	rx_getSucc	27571864.00	rx_putSucc	0.00	rx_delSucc	0.00	rx_getFail	0.00	rx_putFail	0.00	rx_delFail	0.00		dropped_pkt	13607200.00
+	total!!!!!
+tx	88302224.00	tx_get	0.00	tx_put	0.00	tx_del	0.00
+	rx	27595920.00	rx_getSucc	27595876.00	rx_putSucc	0.00	rx_delSucc	0.00	rx_getFail	0.00	rx_putFail	0.00	rx_delFail	0.00		dropped_pkt	13654238.00
+	total!!!!!
+tx	88526808.00	tx_get	0.00	tx_put	0.00	tx_del	0.00
+	rx	27587460.00	rx_getSucc	27587422.00	rx_putSucc	0.00	rx_delSucc	0.00	rx_getFail	0.00	rx_putFail	0.00	rx_delFail	0.00		dropped_pkt	13674118.00
+	total!!!!!
+tx	88399176.00	tx_get	0.00	tx_put	0.00	tx_del	0.00
+	rx	27518840.00	rx_getSucc	27518908.00	rx_putSucc	0.00	rx_delSucc	0.00	rx_getFail	0.00	rx_putFail	0.00	rx_delFail	0.00		dropped_pkt	13670834.00
+	total!!!!!
+tx	88639000.00	tx_get	0.00	tx_put	0.00	tx_del	0.00
+	rx	27578896.00	rx_getSucc	27578864.00	rx_putSucc	0.00	rx_delSucc	0.00	rx_getFail	0.00	rx_putFail	0.00	rx_delFail	0.00		dropped_pkt	13729542.00
+	total!!!!!
+tx	88516056.00	tx_get	0.00	tx_put	0.00	tx_del	0.00
+	rx	27616014.00	rx_getSucc	27616044.00	rx_putSucc	0.00	rx_delSucc	0.00	rx_getFail	0.00	rx_putFail	0.00	rx_delFail	0.00		dropped_pkt	13728670.00
+	total!!!!!
+tx	88407704.00	tx_get	0.00	tx_put	0.00	tx_del	0.00
+	rx	27565044.00	rx_getSucc	27565036.00	rx_putSucc	0.00	rx_delSucc	0.00	rx_getFail	0.00	rx_putFail	0.00	rx_delFail	0.00		dropped_pkt	13620288.00
+	total!!!!!
+tx	88662104.00	tx_get	0.00	tx_put	0.00	tx_del	0.00
+	rx	27544654.00	rx_getSucc	27544658.00	rx_putSucc	0.00	rx_delSucc	0.00	rx_getFail	0.00	rx_putFail	0.00	rx_delFail	0.00		dropped_pkt	13768704.00
+	total!!!!!
+tx	88392480.00	tx_get	0.00	tx_put	0.00	tx_del	0.00
+	rx	27539120.00	rx_getSucc	27539136.00	rx_putSucc	0.00	rx_delSucc	0.00	rx_getFail	0.00	rx_putFail	0.00	rx_delFail	0.00		dropped_pkt	13621338.00
+	total!!!!!
+tx	88584360.00	tx_get	0.00	tx_put	0.00	tx_del	0.00
+	rx	27581092.00	rx_getSucc	27581020.00	rx_putSucc	0.00	rx_delSucc	0.00	rx_getFail	0.00	rx_putFail	0.00	rx_delFail	0.00		dropped_pkt	13669498.00
+	total!!!!!
+tx	88675424.00	tx_get	0.00	tx_put	0.00	tx_del	0.00
+	rx	27577918.00	rx_getSucc	27577994.00	rx_putSucc	0.00	rx_delSucc	0.00	rx_getFail	0.00	rx_putFail	0.00	rx_delFail	0.00		dropped_pkt	13768332.00
+	total!!!!!
+tx	88729880.00	tx_get	0.00	tx_put	0.00	tx_del	0.00
+	rx	27564112.00	rx_getSucc	27564104.00	rx_putSucc	0.00	rx_delSucc	0.00	rx_getFail	0.00	rx_putFail	0.00	rx_delFail	0.00		dropped_pkt	13880914.00
+	total!!!!!
+tx	88589584.00	tx_get	0.00	tx_put	0.00	tx_del	0.00
+	rx	27546524.00	rx_getSucc	27546504.00	rx_putSucc	0.00	rx_delSucc	0.00	rx_getFail	0.00	rx_putFail	0.00	rx_delFail	0.00		dropped_pkt	13737984.00
+	total!!!!!
+tx	88325824.00	tx_get	0.00	tx_put	0.00	tx_del	0.00
+	rx	27540206.00	rx_getSucc	27540238.00	rx_putSucc	0.00	rx_delSucc	0.00	rx_getFail	0.00	rx_putFail	0.00	rx_delFail	0.00		dropped_pkt	13559904.00
+	total!!!!!
+tx	88369680.00	tx_get	0.00	tx_put	0.00	tx_del	0.00
+	rx	27533232.00	rx_getSucc	27533196.00	rx_putSucc	0.00	rx_delSucc	0.00	rx_getFail	0.00	rx_putFail	0.00	rx_delFail	0.00		dropped_pkt	13677234.00
+	total!!!!!
+tx	88535296.00	tx_get	0.00	tx_put	0.00	tx_del	0.00
+	rx	27565018.00	rx_getSucc	27565048.00	rx_putSucc	0.00	rx_delSucc	0.00	rx_getFail	0.00	rx_putFail	0.00	rx_delFail	0.00		dropped_pkt	13683192.00
+	total!!!!!
+tx	88400040.00	tx_get	0.00	tx_put	0.00	tx_del	0.00
+	rx	27565104.00	rx_getSucc	27565080.00	rx_putSucc	0.00	rx_delSucc	0.00	rx_getFail	0.00	rx_putFail	0.00	rx_delFail	0.00		dropped_pkt	13642796.00
+	total!!!!!
+tx	88204672.00	tx_get	0.00	tx_put	0.00	tx_del	0.00
+	rx	27531480.00	rx_getSucc	27531472.00	rx_putSucc	0.00	rx_delSucc	0.00	rx_getFail	0.00	rx_putFail	0.00	rx_delFail	0.00		dropped_pkt	13468220.00
+	total!!!!!
+tx	88595392.00	tx_get	0.00	tx_put	0.00	tx_del	0.00
+	rx	27552290.00	rx_getSucc	27552262.00	rx_putSucc	0.00	rx_delSucc	0.00	rx_getFail	0.00	rx_putFail	0.00	rx_delFail	0.00		dropped_pkt	13786624.00
+	total!!!!!
+tx	88220176.00	tx_get	0.00	tx_put	0.00	tx_del	0.00
+	rx	27526900.00	rx_getSucc	27526932.00	rx_putSucc	0.00	rx_delSucc	0.00	rx_getFail	0.00	rx_putFail	0.00	rx_delFail	0.00		dropped_pkt	13483110.00
+	total!!!!!
+tx	88301488.00	tx_get	0.00	tx_put	0.00	tx_del	0.00
+	rx	27537808.00	rx_getSucc	27537812.00	rx_putSucc	0.00	rx_delSucc	0.00	rx_getFail	0.00	rx_putFail	0.00	rx_delFail	0.00		dropped_pkt	13536608.00
+	total!!!!!
+tx	88298832.00	tx_get	0.00	tx_put	0.00	tx_del	0.00
+	rx	27593270.00	rx_getSucc	27593286.00	rx_putSucc	0.00	rx_delSucc	0.00	rx_getFail	0.00	rx_putFail	0.00	rx_delFail	0.00		dropped_pkt	13609056.00
+	total!!!!!
+tx	88515456.00	tx_get	0.00	tx_put	0.00	tx_del	0.00
+	rx	27548880.00	rx_getSucc	27548868.00	rx_putSucc	0.00	rx_delSucc	0.00	rx_getFail	0.00	rx_putFail	0.00	rx_delFail	0.00		dropped_pkt	13709184.00
+	total!!!!!
+tx	88411456.00	tx_get	0.00	tx_put	0.00	tx_del	0.00
+	rx	27570380.00	rx_getSucc	27570368.00	rx_putSucc	0.00	rx_delSucc	0.00	rx_getFail	0.00	rx_putFail	0.00	rx_delFail	0.00		dropped_pkt	13657682.00
+	total!!!!!
+tx	88723952.00	tx_get	0.00	tx_put	0.00	tx_del	0.00
+	rx	27549980.00	rx_getSucc	27550000.00	rx_putSucc	0.00	rx_delSucc	0.00	rx_getFail	0.00	rx_putFail	0.00	rx_delFail	0.00		dropped_pkt	13839212.00
+	total!!!!!
+tx	88562960.00	tx_get	0.00	tx_put	0.00	tx_del	0.00
+	rx	27591112.00	rx_getSucc	27591084.00	rx_putSucc	0.00	rx_delSucc	0.00	rx_getFail	0.00	rx_putFail	0.00	rx_delFail	0.00		dropped_pkt	13758040.00
+	total!!!!!
+tx	88289168.00	tx_get	0.00	tx_put	0.00	tx_del	0.00
+	rx	27565676.00	rx_getSucc	27565664.00	rx_putSucc	0.00	rx_delSucc	0.00	rx_getFail	0.00	rx_putFail	0.00	rx_delFail	0.00		dropped_pkt	13523578.00
+send hot-in flag!
+	total!!!!!
+tx	88422656.00	tx_get	0.00	tx_put	0.00	tx_del	0.00
+	rx	27511834.00	rx_getSucc	27511862.00	rx_putSucc	0.00	rx_delSucc	0.00	rx_getFail	0.00	rx_putFail	0.00	rx_delFail	0.00		dropped_pkt	13667148.00
+	total!!!!!
+tx	88316056.00	tx_get	0.00	tx_put	0.00	tx_del	0.00
+	rx	27514886.00	rx_getSucc	27514866.00	rx_putSucc	0.00	rx_delSucc	0.00	rx_getFail	0.00	rx_putFail	0.00	rx_delFail	0.00		dropped_pkt	13783940.00
+	total!!!!!
+tx	88372384.00	tx_get	0.00	tx_put	0.00	tx_del	0.00
+	rx	27456124.00	rx_getSucc	27456156.00	rx_putSucc	0.00	rx_delSucc	0.00	rx_getFail	0.00	rx_putFail	0.00	rx_delFail	0.00		dropped_pkt	13816202.00
+	total!!!!!
+tx	88602264.00	tx_get	0.00	tx_put	0.00	tx_del	0.00
+	rx	27516400.00	rx_getSucc	27516376.00	rx_putSucc	0.00	rx_delSucc	0.00	rx_getFail	0.00	rx_putFail	0.00	rx_delFail	0.00		dropped_pkt	13821086.00
+	total!!!!!
+tx	88599024.00	tx_get	0.00	tx_put	0.00	tx_del	0.00
+	rx	27507496.00	rx_getSucc	27507534.00	rx_putSucc	0.00	rx_delSucc	0.00	rx_getFail	0.00	rx_putFail	0.00	rx_delFail	0.00		dropped_pkt	13824306.00
+	total!!!!!
+tx	88655184.00	tx_get	0.00	tx_put	0.00	tx_del	0.00
+	rx	27473336.00	rx_getSucc	27473286.00	rx_putSucc	0.00	rx_delSucc	0.00	rx_getFail	0.00	rx_putFail	0.00	rx_delFail	0.00		dropped_pkt	13947050.00
+	total!!!!!
+tx	88866720.00	tx_get	0.00	tx_put	0.00	tx_del	0.00
+	rx	27478808.00	rx_getSucc	27478816.00	rx_putSucc	0.00	rx_delSucc	0.00	rx_getFail	0.00	rx_putFail	0.00	rx_delFail	0.00		dropped_pkt	14008318.00
+	total!!!!!
+tx	88776576.00	tx_get	0.00	tx_put	0.00	tx_del	0.00
+	rx	27518216.00	rx_getSucc	27518220.00	rx_putSucc	0.00	rx_delSucc	0.00	rx_getFail	0.00	rx_putFail	0.00	rx_delFail	0.00		dropped_pkt	13931722.00
+	total!!!!!
+tx	88583936.00	tx_get	0.00	tx_put	0.00	tx_del	0.00
+	rx	27537350.00	rx_getSucc	27537370.00	rx_putSucc	0.00	rx_delSucc	0.00	rx_getFail	0.00	rx_putFail	0.00	rx_delFail	0.00		dropped_pkt	13834846.00
+	total!!!!!
+tx	88561216.00	tx_get	0.00	tx_put	0.00	tx_del	0.00
+	rx	27517712.00	rx_getSucc	27517670.00	rx_putSucc	0.00	rx_delSucc	0.00	rx_getFail	0.00	rx_putFail	0.00	rx_delFail	0.00		dropped_pkt	13883530.00
+send hot-in flag!
+	total!!!!!
+tx	88487352.00	tx_get	0.00	tx_put	0.00	tx_del	0.00
+	rx	27504532.00	rx_getSucc	27504592.00	rx_putSucc	0.00	rx_delSucc	0.00	rx_getFail	0.00	rx_putFail	0.00	rx_delFail	0.00		dropped_pkt	13819492.00
+	total!!!!!
+tx	88513472.00	tx_get	0.00	tx_put	0.00	tx_del	0.00
+	rx	27534092.00	rx_getSucc	27534028.00	rx_putSucc	0.00	rx_delSucc	0.00	rx_getFail	0.00	rx_putFail	0.00	rx_delFail	0.00		dropped_pkt	13704908.00
+	total!!!!!
+tx	88312128.00	tx_get	0.00	tx_put	0.00	tx_del	0.00
+	rx	27522002.00	rx_getSucc	27522074.00	rx_putSucc	0.00	rx_delSucc	0.00	rx_getFail	0.00	rx_putFail	0.00	rx_delFail	0.00		dropped_pkt	13554330.00
+	total!!!!!
+tx	88398024.00	tx_get	0.00	tx_put	0.00	tx_del	0.00
+	rx	27515124.00	rx_getSucc	27515052.00	rx_putSucc	0.00	rx_delSucc	0.00	rx_getFail	0.00	rx_putFail	0.00	rx_delFail	0.00		dropped_pkt	13641038.00
+	total!!!!!
+tx	88477928.00	tx_get	0.00	tx_put	0.00	tx_del	0.00
+	rx	27549354.00	rx_getSucc	27549360.00	rx_putSucc	0.00	rx_delSucc	0.00	rx_getFail	0.00	rx_putFail	0.00	rx_delFail	0.00		dropped_pkt	13615732.00
+	total!!!!!
+tx	88337160.00	tx_get	0.00	tx_put	0.00	tx_del	0.00
+	rx	27545620.00	rx_getSucc	27545676.00	rx_putSucc	0.00	rx_delSucc	0.00	rx_getFail	0.00	rx_putFail	0.00	rx_delFail	0.00		dropped_pkt	13558234.00
+	total!!!!!
+tx	88684656.00	tx_get	0.00	tx_put	0.00	tx_del	0.00
+	rx	27522936.00	rx_getSucc	27522920.00	rx_putSucc	0.00	rx_delSucc	0.00	rx_getFail	0.00	rx_putFail	0.00	rx_delFail	0.00		dropped_pkt	13780012.00
+	total!!!!!
+tx	88443336.00	tx_get	0.00	tx_put	0.00	tx_del	0.00
+	rx	27524580.00	rx_getSucc	27524540.00	rx_putSucc	0.00	rx_delSucc	0.00	rx_getFail	0.00	rx_putFail	0.00	rx_delFail	0.00		dropped_pkt	13617140.00
+	total!!!!!
+tx	88517208.00	tx_get	0.00	tx_put	0.00	tx_del	0.00
+	rx	27540106.00	rx_getSucc	27540128.00	rx_putSucc	0.00	rx_delSucc	0.00	rx_getFail	0.00	rx_putFail	0.00	rx_delFail	0.00		dropped_pkt	13615836.00
+	total!!!!!
+tx	88509920.00	tx_get	0.00	tx_put	0.00	tx_del	0.00
+	rx	27595398.00	rx_getSucc	27595424.00	rx_putSucc	0.00	rx_delSucc	0.00	rx_getFail	0.00	rx_putFail	0.00	rx_delFail	0.00		dropped_pkt	13645946.00
+send hot-in flag!
+	total!!!!!
+tx	88527776.00	tx_get	0.00	tx_put	0.00	tx_del	0.00
+	rx	27558260.00	rx_getSucc	27558224.00	rx_putSucc	0.00	rx_delSucc	0.00	rx_getFail	0.00	rx_putFail	0.00	rx_delFail	0.00		dropped_pkt	13610710.00
+	total!!!!!
+tx	88803760.00	tx_get	0.00	tx_put	0.00	tx_del	0.00
+	rx	27521644.00	rx_getSucc	27521640.00	rx_putSucc	0.00	rx_delSucc	0.00	rx_getFail	0.00	rx_putFail	0.00	rx_delFail	0.00		dropped_pkt	14040676.00
+	total!!!!!
+tx	88570992.00	tx_get	0.00	tx_put	0.00	tx_del	0.00
+	rx	27507916.00	rx_getSucc	27507932.00	rx_putSucc	0.00	rx_delSucc	0.00	rx_getFail	0.00	rx_putFail	0.00	rx_delFail	0.00		dropped_pkt	13776914.00
+	total!!!!!
+tx	88954200.00	tx_get	0.00	tx_put	0.00	tx_del	0.00
+	rx	27490596.00	rx_getSucc	27490582.00	rx_putSucc	0.00	rx_delSucc	0.00	rx_getFail	0.00	rx_putFail	0.00	rx_delFail	0.00		dropped_pkt	14054852.00
+	total!!!!!
+tx	88491224.00	tx_get	0.00	tx_put	0.00	tx_del	0.00
+	rx	27464012.00	rx_getSucc	27464044.00	rx_putSucc	0.00	rx_delSucc	0.00	rx_getFail	0.00	rx_putFail	0.00	rx_delFail	0.00		dropped_pkt	13729842.00
+	total!!!!!
+tx	88696784.00	tx_get	0.00	tx_put	0.00	tx_del	0.00
+	rx	27454226.00	rx_getSucc	27454246.00	rx_putSucc	0.00	rx_delSucc	0.00	rx_getFail	0.00	rx_putFail	0.00	rx_delFail	0.00		dropped_pkt	13941938.00
+	total!!!!!
+tx	88482720.00	tx_get	0.00	tx_put	0.00	tx_del	0.00
+	rx	27517860.00	rx_getSucc	27517852.00	rx_putSucc	0.00	rx_delSucc	0.00	rx_getFail	0.00	rx_putFail	0.00	rx_delFail	0.00		dropped_pkt	13747480.00
+	total!!!!!
+tx	88825296.00	tx_get	0.00	tx_put	0.00	tx_del	0.00
+	rx	27479474.00	rx_getSucc	27479446.00	rx_putSucc	0.00	rx_delSucc	0.00	rx_getFail	0.00	rx_putFail	0.00	rx_delFail	0.00		dropped_pkt	13970316.00
+	total!!!!!
+tx	88727752.00	tx_get	0.00	tx_put	0.00	tx_del	0.00
+	rx	27501432.00	rx_getSucc	27501440.00	rx_putSucc	0.00	rx_delSucc	0.00	rx_getFail	0.00	rx_putFail	0.00	rx_delFail	0.00		dropped_pkt	13913202.00
+	total!!!!!
+tx	88616816.00	tx_get	0.00	tx_put	0.00	tx_del	0.00
+	rx	27489336.00	rx_getSucc	27489310.00	rx_putSucc	0.00	rx_delSucc	0.00	rx_getFail	0.00	rx_putFail	0.00	rx_delFail	0.00		dropped_pkt	13830744.00
+send hot-in flag!
+	total!!!!!
+tx	88737232.00	tx_get	0.00	tx_put	0.00	tx_del	0.00
+	rx	27471728.00	rx_getSucc	27471756.00	rx_putSucc	0.00	rx_delSucc	0.00	rx_getFail	0.00	rx_putFail	0.00	rx_delFail	0.00		dropped_pkt	13986442.00
+	total!!!!!
+tx	88649824.00	tx_get	0.00	tx_put	0.00	tx_del	0.00
+	rx	27549712.00	rx_getSucc	27549716.00	rx_putSucc	0.00	rx_delSucc	0.00	rx_getFail	0.00	rx_putFail	0.00	rx_delFail	0.00		dropped_pkt	13736014.00
+	total!!!!!
+tx	88830720.00	tx_get	0.00	tx_put	0.00	tx_del	0.00
+	rx	27539724.00	rx_getSucc	27539680.00	rx_putSucc	0.00	rx_delSucc	0.00	rx_getFail	0.00	rx_putFail	0.00	rx_delFail	0.00		dropped_pkt	13831872.00
+	total!!!!!
+tx	88588864.00	tx_get	0.00	tx_put	0.00	tx_del	0.00
+	rx	27540492.00	rx_getSucc	27540496.00	rx_putSucc	0.00	rx_delSucc	0.00	rx_getFail	0.00	rx_putFail	0.00	rx_delFail	0.00		dropped_pkt	13705338.00
+	total!!!!!
+tx	88472688.00	tx_get	0.00	tx_put	0.00	tx_del	0.00
+	rx	27543764.00	rx_getSucc	27543792.00	rx_putSucc	0.00	rx_delSucc	0.00	rx_getFail	0.00	rx_putFail	0.00	rx_delFail	0.00		dropped_pkt	13626876.00
+	total!!!!!
+tx	88619280.00	tx_get	0.00	tx_put	0.00	tx_del	0.00
+	rx	27569192.00	rx_getSucc	27569160.00	rx_putSucc	0.00	rx_delSucc	0.00	rx_getFail	0.00	rx_putFail	0.00	rx_delFail	0.00		dropped_pkt	13740020.00
+	total!!!!!
+tx	88595448.00	tx_get	0.00	tx_put	0.00	tx_del	0.00
+	rx	27558456.00	rx_getSucc	27558472.00	rx_putSucc	0.00	rx_delSucc	0.00	rx_getFail	0.00	rx_putFail	0.00	rx_delFail	0.00		dropped_pkt	13627546.00
+	total!!!!!
+tx	88484952.00	tx_get	0.00	tx_put	0.00	tx_del	0.00
+	rx	27531154.00	rx_getSucc	27531108.00	rx_putSucc	0.00	rx_delSucc	0.00	rx_getFail	0.00	rx_putFail	0.00	rx_delFail	0.00		dropped_pkt	13676058.00
+	total!!!!!
+tx	88584040.00	tx_get	0.00	tx_put	0.00	tx_del	0.00
+	rx	27535640.00	rx_getSucc	27535668.00	rx_putSucc	0.00	rx_delSucc	0.00	rx_getFail	0.00	rx_putFail	0.00	rx_delFail	0.00		dropped_pkt	13695162.00
+	total!!!!!
+tx	88499280.00	tx_get	0.00	tx_put	0.00	tx_del	0.00
+	rx	27561912.00	rx_getSucc	27561928.00	rx_putSucc	0.00	rx_delSucc	0.00	rx_getFail	0.00	rx_putFail	0.00	rx_delFail	0.00		dropped_pkt	13612220.00
+send hot-in flag!
+	total!!!!!
+tx	88614176.00	tx_get	0.00	tx_put	0.00	tx_del	0.00
+	rx	27550036.00	rx_getSucc	27550048.00	rx_putSucc	0.00	rx_delSucc	0.00	rx_getFail	0.00	rx_putFail	0.00	rx_delFail	0.00		dropped_pkt	13666312.00
+	total!!!!!
+tx	88719712.00	tx_get	0.00	tx_put	0.00	tx_del	0.00
+	rx	27496328.00	rx_getSucc	27496364.00	rx_putSucc	0.00	rx_delSucc	0.00	rx_getFail	0.00	rx_putFail	0.00	rx_delFail	0.00		dropped_pkt	13966706.00
+	total!!!!!
+tx	88802984.00	tx_get	0.00	tx_put	0.00	tx_del	0.00
+	rx	27509978.00	rx_getSucc	27509978.00	rx_putSucc	0.00	rx_delSucc	0.00	rx_getFail	0.00	rx_putFail	0.00	rx_delFail	0.00		dropped_pkt	13969516.00
+	total!!!!!
+tx	88542504.00	tx_get	0.00	tx_put	0.00	tx_del	0.00
+	rx	27441482.00	rx_getSucc	27441482.00	rx_putSucc	0.00	rx_delSucc	0.00	rx_getFail	0.00	rx_putFail	0.00	rx_delFail	0.00		dropped_pkt	13865482.00
+	total!!!!!
+tx	88780744.00	tx_get	0.00	tx_put	0.00	tx_del	0.00
+	rx	27519144.00	rx_getSucc	27519136.00	rx_putSucc	0.00	rx_delSucc	0.00	rx_getFail	0.00	rx_putFail	0.00	rx_delFail	0.00		dropped_pkt	14000472.00
+	total!!!!!
+tx	88827576.00	tx_get	0.00	tx_put	0.00	tx_del	0.00
+	rx	27495672.00	rx_getSucc	27495588.00	rx_putSucc	0.00	rx_delSucc	0.00	rx_getFail	0.00	rx_putFail	0.00	rx_delFail	0.00		dropped_pkt	13967466.00
+	total!!!!!
+tx	88560784.00	tx_get	0.00	tx_put	0.00	tx_del	0.00
+	rx	27525524.00	rx_getSucc	27525584.00	rx_putSucc	0.00	rx_delSucc	0.00	rx_getFail	0.00	rx_putFail	0.00	rx_delFail	0.00		dropped_pkt	13831384.00
+	total!!!!!
+tx	88758768.00	tx_get	0.00	tx_put	0.00	tx_del	0.00
+	rx	27513052.00	rx_getSucc	27513080.00	rx_putSucc	0.00	rx_delSucc	0.00	rx_getFail	0.00	rx_putFail	0.00	rx_delFail	0.00		dropped_pkt	13959268.00
+	total!!!!!
+tx	88773840.00	tx_get	0.00	tx_put	0.00	tx_del	0.00
+	rx	27428312.00	rx_getSucc	27428228.00	rx_putSucc	0.00	rx_delSucc	0.00	rx_getFail	0.00	rx_putFail	0.00	rx_delFail	0.00		dropped_pkt	13950866.00
+	total!!!!!
+tx	88788336.00	tx_get	0.00	tx_put	0.00	tx_del	0.00
+	rx	27495152.00	rx_getSucc	27495188.00	rx_putSucc	0.00	rx_delSucc	0.00	rx_getFail	0.00	rx_putFail	0.00	rx_delFail	0.00		dropped_pkt	13928196.00
+send hot-in flag!
+	total!!!!!
+tx	88867496.00	tx_get	0.00	tx_put	0.00	tx_del	0.00
+	rx	27453996.00	rx_getSucc	27454016.00	rx_putSucc	0.00	rx_delSucc	0.00	rx_getFail	0.00	rx_putFail	0.00	rx_delFail	0.00		dropped_pkt	13960658.00
+	total!!!!!
+tx	88556792.00	tx_get	0.00	tx_put	0.00	tx_del	0.00
+	rx	27532820.00	rx_getSucc	27532812.00	rx_putSucc	0.00	rx_delSucc	0.00	rx_getFail	0.00	rx_putFail	0.00	rx_delFail	0.00		dropped_pkt	13713780.00
+	total!!!!!
+tx	88393456.00	tx_get	0.00	tx_put	0.00	tx_del	0.00
+	rx	27534038.00	rx_getSucc	27534010.00	rx_putSucc	0.00	rx_delSucc	0.00	rx_getFail	0.00	rx_putFail	0.00	rx_delFail	0.00		dropped_pkt	13566690.00
+	total!!!!!
+tx	88516560.00	tx_get	0.00	tx_put	0.00	tx_del	0.00
+	rx	27548016.00	rx_getSucc	27548020.00	rx_putSucc	0.00	rx_delSucc	0.00	rx_getFail	0.00	rx_putFail	0.00	rx_delFail	0.00		dropped_pkt	13635348.00
+	total!!!!!
+tx	88542104.00	tx_get	0.00	tx_put	0.00	tx_del	0.00
+	rx	27537286.00	rx_getSucc	27537330.00	rx_putSucc	0.00	rx_delSucc	0.00	rx_getFail	0.00	rx_putFail	0.00	rx_delFail	0.00		dropped_pkt	13654318.00
+	total!!!!!
+tx	88436432.00	tx_get	0.00	tx_put	0.00	tx_del	0.00
+	rx	27532438.00	rx_getSucc	27532390.00	rx_putSucc	0.00	rx_delSucc	0.00	rx_getFail	0.00	rx_putFail	0.00	rx_delFail	0.00		dropped_pkt	13578120.00
+	total!!!!!
+tx	88497848.00	tx_get	0.00	tx_put	0.00	tx_del	0.00
+	rx	27496680.00	rx_getSucc	27496688.00	rx_putSucc	0.00	rx_delSucc	0.00	rx_getFail	0.00	rx_putFail	0.00	rx_delFail	0.00		dropped_pkt	13670996.00
+	total!!!!!
+tx	88666992.00	tx_get	0.00	tx_put	0.00	tx_del	0.00
+	rx	27585436.00	rx_getSucc	27585432.00	rx_putSucc	0.00	rx_delSucc	0.00	rx_getFail	0.00	rx_putFail	0.00	rx_delFail	0.00		dropped_pkt	13773146.00
+	total!!!!!
+tx	88570144.00	tx_get	0.00	tx_put	0.00	tx_del	0.00
+	rx	27574252.00	rx_getSucc	27574276.00	rx_putSucc	0.00	rx_delSucc	0.00	rx_getFail	0.00	rx_putFail	0.00	rx_delFail	0.00		dropped_pkt	13663118.00
+	total!!!!!
+tx	88602016.00	tx_get	0.00	tx_put	0.00	tx_del	0.00
+	rx	27559246.00	rx_getSucc	27559218.00	rx_putSucc	0.00	rx_delSucc	0.00	rx_getFail	0.00	rx_putFail	0.00	rx_delFail	0.00		dropped_pkt	13725902.00
+send hot-in flag!
+	total!!!!!
+tx	88647760.00	tx_get	0.00	tx_put	0.00	tx_del	0.00
+	rx	27571448.00	rx_getSucc	27571484.00	rx_putSucc	0.00	rx_delSucc	0.00	rx_getFail	0.00	rx_putFail	0.00	rx_delFail	0.00		dropped_pkt	13705684.00
+	total!!!!!
+tx	88439920.00	tx_get	0.00	tx_put	0.00	tx_del	0.00
+	rx	27441548.00	rx_getSucc	27441556.00	rx_putSucc	0.00	rx_delSucc	0.00	rx_getFail	0.00	rx_putFail	0.00	rx_delFail	0.00		dropped_pkt	13788978.00
+	total!!!!!
+tx	88761864.00	tx_get	0.00	tx_put	0.00	tx_del	0.00
+	rx	27509766.00	rx_getSucc	27509760.00	rx_putSucc	0.00	rx_delSucc	0.00	rx_getFail	0.00	rx_putFail	0.00	rx_delFail	0.00		dropped_pkt	13950674.00
+	total!!!!!
+tx	88765048.00	tx_get	0.00	tx_put	0.00	tx_del	0.00
+	rx	27490284.00	rx_getSucc	27490304.00	rx_putSucc	0.00	rx_delSucc	0.00	rx_getFail	0.00	rx_putFail	0.00	rx_delFail	0.00		dropped_pkt	13956804.00
+	total!!!!!
+tx	88675896.00	tx_get	0.00	tx_put	0.00	tx_del	0.00
+	rx	27521136.00	rx_getSucc	27521112.00	rx_putSucc	0.00	rx_delSucc	0.00	rx_getFail	0.00	rx_putFail	0.00	rx_delFail	0.00		dropped_pkt	13878118.00
+	total!!!!!
+tx	88703112.00	tx_get	0.00	tx_put	0.00	tx_del	0.00
+	rx	27469296.00	rx_getSucc	27469292.00	rx_putSucc	0.00	rx_delSucc	0.00	rx_getFail	0.00	rx_putFail	0.00	rx_delFail	0.00		dropped_pkt	13874578.00
+	total!!!!!
+tx	88787008.00	tx_get	0.00	tx_put	0.00	tx_del	0.00
+	rx	27474012.00	rx_getSucc	27474036.00	rx_putSucc	0.00	rx_delSucc	0.00	rx_getFail	0.00	rx_putFail	0.00	rx_delFail	0.00		dropped_pkt	13856934.00
+	total!!!!!
+tx	88574048.00	tx_get	0.00	tx_put	0.00	tx_del	0.00
+	rx	27448096.00	rx_getSucc	27448100.00	rx_putSucc	0.00	rx_delSucc	0.00	rx_getFail	0.00	rx_putFail	0.00	rx_delFail	0.00		dropped_pkt	13827154.00
+	total!!!!!
+tx	88755440.00	tx_get	0.00	tx_put	0.00	tx_del	0.00
+	rx	27444080.00	rx_getSucc	27444080.00	rx_putSucc	0.00	rx_delSucc	0.00	rx_getFail	0.00	rx_putFail	0.00	rx_delFail	0.00		dropped_pkt	13981476.00
+	total!!!!!
+tx	88828168.00	tx_get	0.00	tx_put	0.00	tx_del	0.00
+	rx	27484988.00	rx_getSucc	27484924.00	rx_putSucc	0.00	rx_delSucc	0.00	rx_getFail	0.00	rx_putFail	0.00	rx_delFail	0.00		dropped_pkt	13921842.00
+send hot-in flag!
+	total!!!!!
+tx	88770416.00	tx_get	0.00	tx_put	0.00	tx_del	0.00
+	rx	27536888.00	rx_getSucc	27536948.00	rx_putSucc	0.00	rx_delSucc	0.00	rx_getFail	0.00	rx_putFail	0.00	rx_delFail	0.00		dropped_pkt	14033802.00
+	total!!!!!
+tx	88342408.00	tx_get	0.00	tx_put	0.00	tx_del	0.00
+	rx	27500076.00	rx_getSucc	27500012.00	rx_putSucc	0.00	rx_delSucc	0.00	rx_getFail	0.00	rx_putFail	0.00	rx_delFail	0.00		dropped_pkt	13498370.00
+	total!!!!!
+tx	88525776.00	tx_get	0.00	tx_put	0.00	tx_del	0.00
+	rx	27507400.00	rx_getSucc	27507452.00	rx_putSucc	0.00	rx_delSucc	0.00	rx_getFail	0.00	rx_putFail	0.00	rx_delFail	0.00		dropped_pkt	13664224.00
+	total!!!!!
+tx	88365072.00	tx_get	0.00	tx_put	0.00	tx_del	0.00
+	rx	27545132.00	rx_getSucc	27545136.00	rx_putSucc	0.00	rx_delSucc	0.00	rx_getFail	0.00	rx_putFail	0.00	rx_delFail	0.00		dropped_pkt	13626158.00
+	total!!!!!
+tx	88645072.00	tx_get	0.00	tx_put	0.00	tx_del	0.00
+	rx	27592884.00	rx_getSucc	27592888.00	rx_putSucc	0.00	rx_delSucc	0.00	rx_getFail	0.00	rx_putFail	0.00	rx_delFail	0.00		dropped_pkt	13684934.00
+	total!!!!!
+tx	88520264.00	tx_get	0.00	tx_put	0.00	tx_del	0.00
+	rx	27524226.00	rx_getSucc	27524182.00	rx_putSucc	0.00	rx_delSucc	0.00	rx_getFail	0.00	rx_putFail	0.00	rx_delFail	0.00		dropped_pkt	13709076.00
+	total!!!!!
+tx	88380000.00	tx_get	0.00	tx_put	0.00	tx_del	0.00
+	rx	27553238.00	rx_getSucc	27553294.00	rx_putSucc	0.00	rx_delSucc	0.00	rx_getFail	0.00	rx_putFail	0.00	rx_delFail	0.00		dropped_pkt	13551944.00
+	total!!!!!
+tx	88670464.00	tx_get	0.00	tx_put	0.00	tx_del	0.00
+	rx	27522520.00	rx_getSucc	27522512.00	rx_putSucc	0.00	rx_delSucc	0.00	rx_getFail	0.00	rx_putFail	0.00	rx_delFail	0.00		dropped_pkt	13671764.00
+	total!!!!!
+tx	88781184.00	tx_get	0.00	tx_put	0.00	tx_del	0.00
+	rx	27556380.00	rx_getSucc	27556388.00	rx_putSucc	0.00	rx_delSucc	0.00	rx_getFail	0.00	rx_putFail	0.00	rx_delFail	0.00		dropped_pkt	13783514.00
+	total!!!!!
+tx	88548976.00	tx_get	0.00	tx_put	0.00	tx_del	0.00
+	rx	27506260.00	rx_getSucc	27506260.00	rx_putSucc	0.00	rx_delSucc	0.00	rx_getFail	0.00	rx_putFail	0.00	rx_delFail	0.00		dropped_pkt	13598888.00
+send hot-in flag!
+	total!!!!!
+tx	88818928.00	tx_get	0.00	tx_put	0.00	tx_del	0.00
+	rx	27524192.00	rx_getSucc	27524132.00	rx_putSucc	0.00	rx_delSucc	0.00	rx_getFail	0.00	rx_putFail	0.00	rx_delFail	0.00		dropped_pkt	13833300.00
+	total!!!!!
+tx	88549632.00	tx_get	0.00	tx_put	0.00	tx_del	0.00
+	rx	27491466.00	rx_getSucc	27491512.00	rx_putSucc	0.00	rx_delSucc	0.00	rx_getFail	0.00	rx_putFail	0.00	rx_delFail	0.00		dropped_pkt	13868614.00
+	total!!!!!
+tx	88706816.00	tx_get	0.00	tx_put	0.00	tx_del	0.00
+	rx	27455868.00	rx_getSucc	27455852.00	rx_putSucc	0.00	rx_delSucc	0.00	rx_getFail	0.00	rx_putFail	0.00	rx_delFail	0.00		dropped_pkt	13888932.00
+	total!!!!!
+tx	88822864.00	tx_get	0.00	tx_put	0.00	tx_del	0.00
+	rx	27474066.00	rx_getSucc	27474058.00	rx_putSucc	0.00	rx_delSucc	0.00	rx_getFail	0.00	rx_putFail	0.00	rx_delFail	0.00		dropped_pkt	14057988.00
+	total!!!!!
+tx	88461432.00	tx_get	0.00	tx_put	0.00	tx_del	0.00
+	rx	27525980.00	rx_getSucc	27525960.00	rx_putSucc	0.00	rx_delSucc	0.00	rx_getFail	0.00	rx_putFail	0.00	rx_delFail	0.00		dropped_pkt	13806264.00
+	total!!!!!
+tx	88534048.00	tx_get	0.00	tx_put	0.00	tx_del	0.00
+	rx	27470070.00	rx_getSucc	27470114.00	rx_putSucc	0.00	rx_delSucc	0.00	rx_getFail	0.00	rx_putFail	0.00	rx_delFail	0.00		dropped_pkt	13883780.00
+	total!!!!!
+tx	88783160.00	tx_get	0.00	tx_put	0.00	tx_del	0.00
+	rx	27520942.00	rx_getSucc	27520938.00	rx_putSucc	0.00	rx_delSucc	0.00	rx_getFail	0.00	rx_putFail	0.00	rx_delFail	0.00		dropped_pkt	13945156.00
+	total!!!!!
+tx	88666368.00	tx_get	0.00	tx_put	0.00	tx_del	0.00
+	rx	27476830.00	rx_getSucc	27476862.00	rx_putSucc	0.00	rx_delSucc	0.00	rx_getFail	0.00	rx_putFail	0.00	rx_delFail	0.00		dropped_pkt	13921356.00
+	total!!!!!
+tx	88794304.00	tx_get	0.00	tx_put	0.00	tx_del	0.00
+	rx	27481020.00	rx_getSucc	27481004.00	rx_putSucc	0.00	rx_delSucc	0.00	rx_getFail	0.00	rx_putFail	0.00	rx_delFail	0.00		dropped_pkt	13952204.00
+	total!!!!!
+tx	88557552.00	tx_get	0.00	tx_put	0.00	tx_del	0.00
+	rx	27482500.00	rx_getSucc	27482432.00	rx_putSucc	0.00	rx_delSucc	0.00	rx_getFail	0.00	rx_putFail	0.00	rx_delFail	0.00		dropped_pkt	13868234.00
+send hot-in flag!
+	total!!!!!
+tx	88828984.00	tx_get	0.00	tx_put	0.00	tx_del	0.00
+	rx	27519554.00	rx_getSucc	27519534.00	rx_putSucc	0.00	rx_delSucc	0.00	rx_getFail	0.00	rx_putFail	0.00	rx_delFail	0.00		dropped_pkt	13986136.00
+	total!!!!!
+tx	88669536.00	tx_get	0.00	tx_put	0.00	tx_del	0.00
+	rx	27549524.00	rx_getSucc	27549632.00	rx_putSucc	0.00	rx_delSucc	0.00	rx_getFail	0.00	rx_putFail	0.00	rx_delFail	0.00		dropped_pkt	13759194.00
+	total!!!!!
+tx	88498064.00	tx_get	0.00	tx_put	0.00	tx_del	0.00
+	rx	27534184.00	rx_getSucc	27534148.00	rx_putSucc	0.00	rx_delSucc	0.00	rx_getFail	0.00	rx_putFail	0.00	rx_delFail	0.00		dropped_pkt	13628360.00
+	total!!!!!
+tx	88510248.00	tx_get	0.00	tx_put	0.00	tx_del	0.00
+	rx	27519980.00	rx_getSucc	27519972.00	rx_putSucc	0.00	rx_delSucc	0.00	rx_getFail	0.00	rx_putFail	0.00	rx_delFail	0.00		dropped_pkt	13594036.00
+	total!!!!!
+tx	88509952.00	tx_get	0.00	tx_put	0.00	tx_del	0.00
+	rx	27552862.00	rx_getSucc	27552872.00	rx_putSucc	0.00	rx_delSucc	0.00	rx_getFail	0.00	rx_putFail	0.00	rx_delFail	0.00		dropped_pkt	13724660.00
+	total!!!!!
+tx	88499472.00	tx_get	0.00	tx_put	0.00	tx_del	0.00
+	rx	27504708.00	rx_getSucc	27504712.00	rx_putSucc	0.00	rx_delSucc	0.00	rx_getFail	0.00	rx_putFail	0.00	rx_delFail	0.00		dropped_pkt	13659322.00
+	total!!!!!
+tx	88503960.00	tx_get	0.00	tx_put	0.00	tx_del	0.00
+	rx	27507548.00	rx_getSucc	27507556.00	rx_putSucc	0.00	rx_delSucc	0.00	rx_getFail	0.00	rx_putFail	0.00	rx_delFail	0.00		dropped_pkt	13588814.00
+	total!!!!!
+tx	88603632.00	tx_get	0.00	tx_put	0.00	tx_del	0.00
+	rx	27527134.00	rx_getSucc	27527106.00	rx_putSucc	0.00	rx_delSucc	0.00	rx_getFail	0.00	rx_putFail	0.00	rx_delFail	0.00		dropped_pkt	13658848.00
+	total!!!!!
+tx	88570416.00	tx_get	0.00	tx_put	0.00	tx_del	0.00
+	rx	27557064.00	rx_getSucc	27557012.00	rx_putSucc	0.00	rx_delSucc	0.00	rx_getFail	0.00	rx_putFail	0.00	rx_delFail	0.00		dropped_pkt	13707962.00
+	total!!!!!
+tx	88702576.00	tx_get	0.00	tx_put	0.00	tx_del	0.00
+	rx	27545688.00	rx_getSucc	27545744.00	rx_putSucc	0.00	rx_delSucc	0.00	rx_getFail	0.00	rx_putFail	0.00	rx_delFail	0.00		dropped_pkt	13763988.00
+send hot-in flag!
+	total!!!!!
+tx	88473696.00	tx_get	0.00	tx_put	0.00	tx_del	0.00
+	rx	27545956.00	rx_getSucc	27545940.00	rx_putSucc	0.00	rx_delSucc	0.00	rx_getFail	0.00	rx_putFail	0.00	rx_delFail	0.00		dropped_pkt	13593978.00
+	total!!!!!
+tx	88695136.00	tx_get	0.00	tx_put	0.00	tx_del	0.00
+	rx	27498568.00	rx_getSucc	27498580.00	rx_putSucc	0.00	rx_delSucc	0.00	rx_getFail	0.00	rx_putFail	0.00	rx_delFail	0.00		dropped_pkt	13926264.00
+	total!!!!!
+tx	88814384.00	tx_get	0.00	tx_put	0.00	tx_del	0.00
+	rx	27475192.00	rx_getSucc	27475180.00	rx_putSucc	0.00	rx_delSucc	0.00	rx_getFail	0.00	rx_putFail	0.00	rx_delFail	0.00		dropped_pkt	13940562.00
+	total!!!!!
+tx	88486672.00	tx_get	0.00	tx_put	0.00	tx_del	0.00
+	rx	27491752.00	rx_getSucc	27491772.00	rx_putSucc	0.00	rx_delSucc	0.00	rx_getFail	0.00	rx_putFail	0.00	rx_delFail	0.00		dropped_pkt	13740524.00
+	total!!!!!
+tx	88600272.00	tx_get	0.00	tx_put	0.00	tx_del	0.00
+	rx	27468192.00	rx_getSucc	27468136.00	rx_putSucc	0.00	rx_delSucc	0.00	rx_getFail	0.00	rx_putFail	0.00	rx_delFail	0.00		dropped_pkt	13850130.00
+	total!!!!!
+tx	88733144.00	tx_get	0.00	tx_put	0.00	tx_del	0.00
+	rx	27464940.00	rx_getSucc	27464928.00	rx_putSucc	0.00	rx_delSucc	0.00	rx_getFail	0.00	rx_putFail	0.00	rx_delFail	0.00		dropped_pkt	13934904.00
+	total!!!!!
+tx	88673136.00	tx_get	0.00	tx_put	0.00	tx_del	0.00
+	rx	27508612.00	rx_getSucc	27508692.00	rx_putSucc	0.00	rx_delSucc	0.00	rx_getFail	0.00	rx_putFail	0.00	rx_delFail	0.00		dropped_pkt	13915500.00
+	total!!!!!
+tx	88567352.00	tx_get	0.00	tx_put	0.00	tx_del	0.00
+	rx	27475552.00	rx_getSucc	27475544.00	rx_putSucc	0.00	rx_delSucc	0.00	rx_getFail	0.00	rx_putFail	0.00	rx_delFail	0.00		dropped_pkt	13821548.00
+	total!!!!!
+tx	88699088.00	tx_get	0.00	tx_put	0.00	tx_del	0.00
+	rx	27451122.00	rx_getSucc	27451114.00	rx_putSucc	0.00	rx_delSucc	0.00	rx_getFail	0.00	rx_putFail	0.00	rx_delFail	0.00		dropped_pkt	13931002.00
+	total!!!!!
+tx	88662664.00	tx_get	0.00	tx_put	0.00	tx_del	0.00
+	rx	27454074.00	rx_getSucc	27454046.00	rx_putSucc	0.00	rx_delSucc	0.00	rx_getFail	0.00	rx_putFail	0.00	rx_delFail	0.00		dropped_pkt	13928402.00
+send hot-in flag!
+	total!!!!!
+tx	88663592.00	tx_get	0.00	tx_put	0.00	tx_del	0.00
+	rx	27473880.00	rx_getSucc	27473860.00	rx_putSucc	0.00	rx_delSucc	0.00	rx_getFail	0.00	rx_putFail	0.00	rx_delFail	0.00		dropped_pkt	13900824.00
+	total!!!!!
+tx	88660128.00	tx_get	0.00	tx_put	0.00	tx_del	0.00
+	rx	27532288.00	rx_getSucc	27532316.00	rx_putSucc	0.00	rx_delSucc	0.00	rx_getFail	0.00	rx_putFail	0.00	rx_delFail	0.00		dropped_pkt	13754522.00
+	total!!!!!
+tx	88550592.00	tx_get	0.00	tx_put	0.00	tx_del	0.00
+	rx	27539484.00	rx_getSucc	27539444.00	rx_putSucc	0.00	rx_delSucc	0.00	rx_getFail	0.00	rx_putFail	0.00	rx_delFail	0.00		dropped_pkt	13612026.00
+	total!!!!!
+tx	88486176.00	tx_get	0.00	tx_put	0.00	tx_del	0.00
+	rx	27516508.00	rx_getSucc	27516552.00	rx_putSucc	0.00	rx_delSucc	0.00	rx_getFail	0.00	rx_putFail	0.00	rx_delFail	0.00		dropped_pkt	13645058.00
+	total!!!!!
+tx	88668272.00	tx_get	0.00	tx_put	0.00	tx_del	0.00
+	rx	27527700.00	rx_getSucc	27527668.00	rx_putSucc	0.00	rx_delSucc	0.00	rx_getFail	0.00	rx_putFail	0.00	rx_delFail	0.00		dropped_pkt	13753838.00
+	total!!!!!
+tx	88629424.00	tx_get	0.00	tx_put	0.00	tx_del	0.00
+	rx	27557768.00	rx_getSucc	27557790.00	rx_putSucc	0.00	rx_delSucc	0.00	rx_getFail	0.00	rx_putFail	0.00	rx_delFail	0.00		dropped_pkt	13632386.00
+	total!!!!!
+tx	88630024.00	tx_get	0.00	tx_put	0.00	tx_del	0.00
+	rx	27530716.00	rx_getSucc	27530696.00	rx_putSucc	0.00	rx_delSucc	0.00	rx_getFail	0.00	rx_putFail	0.00	rx_delFail	0.00		dropped_pkt	13734836.00
+	total!!!!!
+tx	88770896.00	tx_get	0.00	tx_put	0.00	tx_del	0.00
+	rx	27503144.00	rx_getSucc	27503164.00	rx_putSucc	0.00	rx_delSucc	0.00	rx_getFail	0.00	rx_putFail	0.00	rx_delFail	0.00		dropped_pkt	13858586.00
+	total!!!!!
+tx	88516984.00	tx_get	0.00	tx_put	0.00	tx_del	0.00
+	rx	27554104.00	rx_getSucc	27554048.00	rx_putSucc	0.00	rx_delSucc	0.00	rx_getFail	0.00	rx_putFail	0.00	rx_delFail	0.00		dropped_pkt	13637876.00
+	total!!!!!
+tx	88500592.00	tx_get	0.00	tx_put	0.00	tx_del	0.00
+	rx	27540418.00	rx_getSucc	27540482.00	rx_putSucc	0.00	rx_delSucc	0.00	rx_getFail	0.00	rx_putFail	0.00	rx_delFail	0.00		dropped_pkt	13593794.00
+send hot-in flag!
+	total!!!!!
+tx	88608512.00	tx_get	0.00	tx_put	0.00	tx_del	0.00
+	rx	27545980.00	rx_getSucc	27545968.00	rx_putSucc	0.00	rx_delSucc	0.00	rx_getFail	0.00	rx_putFail	0.00	rx_delFail	0.00		dropped_pkt	13649994.00
+	total!!!!!
+tx	88522648.00	tx_get	0.00	tx_put	0.00	tx_del	0.00
+	rx	27504668.00	rx_getSucc	27504668.00	rx_putSucc	0.00	rx_delSucc	0.00	rx_getFail	0.00	rx_putFail	0.00	rx_delFail	0.00		dropped_pkt	13776832.00
+	total!!!!!
+tx	88869296.00	tx_get	0.00	tx_put	0.00	tx_del	0.00
+	rx	27469200.00	rx_getSucc	27469200.00	rx_putSucc	0.00	rx_delSucc	0.00	rx_getFail	0.00	rx_putFail	0.00	rx_delFail	0.00		dropped_pkt	14015530.00
+	total!!!!!
+tx	88749792.00	tx_get	0.00	tx_put	0.00	tx_del	0.00
+	rx	27470856.00	rx_getSucc	27470884.00	rx_putSucc	0.00	rx_delSucc	0.00	rx_getFail	0.00	rx_putFail	0.00	rx_delFail	0.00		dropped_pkt	13952094.00
+	total!!!!!
+tx	88773376.00	tx_get	0.00	tx_put	0.00	tx_del	0.00
+	rx	27501668.00	rx_getSucc	27501608.00	rx_putSucc	0.00	rx_delSucc	0.00	rx_getFail	0.00	rx_putFail	0.00	rx_delFail	0.00		dropped_pkt	13970860.00
+	total!!!!!
+tx	88676584.00	tx_get	0.00	tx_put	0.00	tx_del	0.00
+	rx	27459426.00	rx_getSucc	27459490.00	rx_putSucc	0.00	rx_delSucc	0.00	rx_getFail	0.00	rx_putFail	0.00	rx_delFail	0.00		dropped_pkt	13914840.00
+	total!!!!!
+tx	88773272.00	tx_get	0.00	tx_put	0.00	tx_del	0.00
+	rx	27481044.00	rx_getSucc	27481024.00	rx_putSucc	0.00	rx_delSucc	0.00	rx_getFail	0.00	rx_putFail	0.00	rx_delFail	0.00		dropped_pkt	13954820.00
+	total!!!!!
+tx	88617536.00	tx_get	0.00	tx_put	0.00	tx_del	0.00
+	rx	27502220.00	rx_getSucc	27502184.00	rx_putSucc	0.00	rx_delSucc	0.00	rx_getFail	0.00	rx_putFail	0.00	rx_delFail	0.00		dropped_pkt	13898026.00
+	total!!!!!
+tx	88642840.00	tx_get	0.00	tx_put	0.00	tx_del	0.00
+	rx	27482636.00	rx_getSucc	27482644.00	rx_putSucc	0.00	rx_delSucc	0.00	rx_getFail	0.00	rx_putFail	0.00	rx_delFail	0.00		dropped_pkt	13884056.00
+	total!!!!!
+tx	88701168.00	tx_get	0.00	tx_put	0.00	tx_del	0.00
+	rx	27503280.00	rx_getSucc	27503324.00	rx_putSucc	0.00	rx_delSucc	0.00	rx_getFail	0.00	rx_putFail	0.00	rx_delFail	0.00		dropped_pkt	13857714.00
+send hot-in flag!
+	total!!!!!
+tx	88687360.00	tx_get	0.00	tx_put	0.00	tx_del	0.00
+	rx	27519058.00	rx_getSucc	27519010.00	rx_putSucc	0.00	rx_delSucc	0.00	rx_getFail	0.00	rx_putFail	0.00	rx_delFail	0.00		dropped_pkt	13907288.00
+	total!!!!!
+tx	88592856.00	tx_get	0.00	tx_put	0.00	tx_del	0.00
+	rx	27539588.00	rx_getSucc	27539620.00	rx_putSucc	0.00	rx_delSucc	0.00	rx_getFail	0.00	rx_putFail	0.00	rx_delFail	0.00		dropped_pkt	13715028.00
+	total!!!!!
+tx	88615400.00	tx_get	0.00	tx_put	0.00	tx_del	0.00
+	rx	27562918.00	rx_getSucc	27562866.00	rx_putSucc	0.00	rx_delSucc	0.00	rx_getFail	0.00	rx_putFail	0.00	rx_delFail	0.00		dropped_pkt	13692078.00
+	total!!!!!
+tx	88643096.00	tx_get	0.00	tx_put	0.00	tx_del	0.00
+	rx	27560740.00	rx_getSucc	27560764.00	rx_putSucc	0.00	rx_delSucc	0.00	rx_getFail	0.00	rx_putFail	0.00	rx_delFail	0.00		dropped_pkt	13781184.00
+	total!!!!!
+tx	88732720.00	tx_get	0.00	tx_put	0.00	tx_del	0.00
+	rx	27552372.00	rx_getSucc	27552368.00	rx_putSucc	0.00	rx_delSucc	0.00	rx_getFail	0.00	rx_putFail	0.00	rx_delFail	0.00		dropped_pkt	13728636.00
+	total!!!!!
+tx	88794936.00	tx_get	0.00	tx_put	0.00	tx_del	0.00
+	rx	27565956.00	rx_getSucc	27565988.00	rx_putSucc	0.00	rx_delSucc	0.00	rx_getFail	0.00	rx_putFail	0.00	rx_delFail	0.00		dropped_pkt	13838542.00
+	total!!!!!
+tx	88846176.00	tx_get	0.00	tx_put	0.00	tx_del	0.00
+	rx	27559316.00	rx_getSucc	27559288.00	rx_putSucc	0.00	rx_delSucc	0.00	rx_getFail	0.00	rx_putFail	0.00	rx_delFail	0.00		dropped_pkt	13781672.00
+	total!!!!!
+tx	88794848.00	tx_get	0.00	tx_put	0.00	tx_del	0.00
+	rx	27500368.00	rx_getSucc	27500360.00	rx_putSucc	0.00	rx_delSucc	0.00	rx_getFail	0.00	rx_putFail	0.00	rx_delFail	0.00		dropped_pkt	13820366.00
+	total!!!!!
+tx	88538528.00	tx_get	0.00	tx_put	0.00	tx_del	0.00
+	rx	27530560.00	rx_getSucc	27530568.00	rx_putSucc	0.00	rx_delSucc	0.00	rx_getFail	0.00	rx_putFail	0.00	rx_delFail	0.00		dropped_pkt	13571956.00
+	total!!!!!
+tx	88726968.00	tx_get	0.00	tx_put	0.00	tx_del	0.00
+	rx	27568928.00	rx_getSucc	27568928.00	rx_putSucc	0.00	rx_delSucc	0.00	rx_getFail	0.00	rx_putFail	0.00	rx_delFail	0.00		dropped_pkt	13734574.00
+send hot-in flag!
+	total!!!!!
+tx	88644064.00	tx_get	0.00	tx_put	0.00	tx_del	0.00
+	rx	27501632.00	rx_getSucc	27501586.00	rx_putSucc	0.00	rx_delSucc	0.00	rx_getFail	0.00	rx_putFail	0.00	rx_delFail	0.00		dropped_pkt	13709742.00
+	total!!!!!
+tx	88831536.00	tx_get	0.00	tx_put	0.00	tx_del	0.00
+	rx	27470446.00	rx_getSucc	27470486.00	rx_putSucc	0.00	rx_delSucc	0.00	rx_getFail	0.00	rx_putFail	0.00	rx_delFail	0.00		dropped_pkt	14016094.00
+	total!!!!!
+tx	88726416.00	tx_get	0.00	tx_put	0.00	tx_del	0.00
+	rx	27487604.00	rx_getSucc	27487576.00	rx_putSucc	0.00	rx_delSucc	0.00	rx_getFail	0.00	rx_putFail	0.00	rx_delFail	0.00		dropped_pkt	13908542.00
+	total!!!!!
+tx	88690168.00	tx_get	0.00	tx_put	0.00	tx_del	0.00
+	rx	27439262.00	rx_getSucc	27439256.00	rx_putSucc	0.00	rx_delSucc	0.00	rx_getFail	0.00	rx_putFail	0.00	rx_delFail	0.00		dropped_pkt	13937112.00
+	total!!!!!
+tx	89057640.00	tx_get	0.00	tx_put	0.00	tx_del	0.00
+	rx	27531170.00	rx_getSucc	27531204.00	rx_putSucc	0.00	rx_delSucc	0.00	rx_getFail	0.00	rx_putFail	0.00	rx_delFail	0.00		dropped_pkt	14092568.00
+	total!!!!!
+tx	88858712.00	tx_get	0.00	tx_put	0.00	tx_del	0.00
+	rx	27516112.00	rx_getSucc	27516072.00	rx_putSucc	0.00	rx_delSucc	0.00	rx_getFail	0.00	rx_putFail	0.00	rx_delFail	0.00		dropped_pkt	13947430.00
+	total!!!!!
+tx	88845040.00	tx_get	0.00	tx_put	0.00	tx_del	0.00
+	rx	27484008.00	rx_getSucc	27484092.00	rx_putSucc	0.00	rx_delSucc	0.00	rx_getFail	0.00	rx_putFail	0.00	rx_delFail	0.00		dropped_pkt	13952332.00
+	total!!!!!
+tx	88794568.00	tx_get	0.00	tx_put	0.00	tx_del	0.00
+	rx	27469196.00	rx_getSucc	27469136.00	rx_putSucc	0.00	rx_delSucc	0.00	rx_getFail	0.00	rx_putFail	0.00	rx_delFail	0.00		dropped_pkt	13961720.00
+	total!!!!!
+tx	88565472.00	tx_get	0.00	tx_put	0.00	tx_del	0.00
+	rx	27496166.00	rx_getSucc	27496194.00	rx_putSucc	0.00	rx_delSucc	0.00	rx_getFail	0.00	rx_putFail	0.00	rx_delFail	0.00		dropped_pkt	13785566.00
+	total!!!!!
+tx	88669568.00	tx_get	0.00	tx_put	0.00	tx_del	0.00
+	rx	27470994.00	rx_getSucc	27470998.00	rx_putSucc	0.00	rx_delSucc	0.00	rx_getFail	0.00	rx_putFail	0.00	rx_delFail	0.00		dropped_pkt	13890232.00
+send hot-in flag!
+send hot-in flag!
+send hot-in flag!
+send hot-in flag!
+send hot-in flag!
+send hot-in flag!
+send hot-in flag!
+send hot-in flag!
+checkpoint: 3
+checkpoint: 4
+checkpoint: 28
+checkpoint: 27
+checkpoint: 24
+checkpoint: 10
+checkpoint: 8
+checkpoint: 11
+checkpoint: 1
+checkpoint: 25
+checkpoint: 6
+checkpoint: 2
+checkpoint: 9
+checkpoint: 29
+checkpoint: 7
+checkpoint: 26
+checkpoint: 5
+checkpoint: 30

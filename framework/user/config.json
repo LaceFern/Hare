@@ -1,0 +1,13 @@
+{
+	"backend_server_num": 2,
+	"backend_server_ips": ["10.0.0.7", "10.0.0.8"],
+	"backend_server_macs": ["98:03:9b:ca:40:18", "0c:42:a1:2b:0d:70"],
+	"backend_server_thread_num": 2,
+	"backend_server_thread_UDPports": [5001, 5002],
+	"offloaded_object_size": 80,
+	"offloaded_object_num": 32768, 
+	"offloaded_object_seg_num": 1,
+	"offloaded_object_seg_size": 80,
+	"K":800,
+	"waiting_time_ms":50
+}
