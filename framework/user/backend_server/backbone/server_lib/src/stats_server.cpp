@@ -12,36 +12,9 @@
 #include "general_server.h"
 #include "stats_server.h"
 
-uint32_t stats_stage = STATS_COLLECT; // STATS_COLLECT // STATS_ANALYZE
+User::~User() {}
 
-volatile bool clean_flag = 0;
-//volatile uint32_t stats_phase[NC_MAX_LCORES];
-topk_obj_info merge_to_info_list[NC_MAX_LCORES * TOPK];
-topk_obj_info lcore_to_info_list[NC_MAX_LCORES][TOPK + 1];
-
-uint32_t lock_stat_flag = 0;
-volatile uint32_t upd_obj_flag = 0;
-uint32_t upd_obj_num = 0;
-
-cold_obj_info co_info = {};
-cold_obj_info co_info_heap[TOPK] = {0};
-
-hot_obj_info ho_info = {};
-hot_obj_info ho_info_heap[TOPK] = {0};
-uint32_t ho_num = 0;
-
-upd_obj_info uo_info = {};
-upd_obj_info uo_info_list[TOPK] = {};
-upd_obj_info uo_info_pernode_list[NUM_BACKENDNODE][TOPK];
-uint32_t uo_info_num_pernode_list[NUM_BACKENDNODE];
-uint32_t uo_num = 0;
-
-std::unordered_map<uint_obj, uint32_t> stats_0[NC_MAX_LCORES];
-std::unordered_map<uint_obj, uint32_t> stats_1[NC_MAX_LCORES];
-
-std::mutex mtx;
-
-uint32_t server_stats_loop(){
+uint32_t User::server_stats_loop(){
     uint32_t lcore_id = rte_lcore_id();
     uint32_t rx_queue_id = lcore_id_2_rx_queue_id_list[lcore_id];
     /***************************** variables *****************************/
@@ -346,8 +319,9 @@ uint32_t server_stats_loop(){
                 }while(pkt_index_set.size() == pkt_num);
 
                 upd_obj_flag = 1;
-                move_appdata_fromSDPtoBS(uo_info_list);
-                move_appdata_fromBStoSDP(uo_info_list);
+
+                // move_appdata_fromSDPtoBS(uo_info_list);
+                // move_appdata_fromBStoSDP(uo_info_list);
 
                 do {
                     rcv_payload_bias = 0;
@@ -466,7 +440,7 @@ uint32_t server_stats_loop(){
 }
 
 
-void minheap_downAdjust(topk_obj_info heap[], int low, int high){
+void User::minheap_downAdjust(topk_obj_info heap[], int low, int high){
     int i = low, j = i * 2;
     while(j <= high){
         if(j+1 <= high && heap[j+1].count < heap[j].count){
@@ -485,7 +459,7 @@ void minheap_downAdjust(topk_obj_info heap[], int low, int high){
     }
 }
 
-void stats_update(uint_obj obj, uint32_t stats_id){
+void User::stats_update(uint_obj obj, uint32_t stats_id){
     if(!lock_stat_flag){
         topk_obj_info to_info = {};
         to_info.obj = obj;
@@ -559,12 +533,7 @@ void stats_update(uint_obj obj, uint32_t stats_id){
     }
 }
 
-
-
-
-throughput_statistics tput_stat[NC_MAX_LCORES];
-
-void print_per_core_throughput(void) {
+void User::print_per_core_throughput(void) {
     // time is in second
     printf("%lld\nthroughput\n", (long long)time(NULL));
     uint32_t i, j;

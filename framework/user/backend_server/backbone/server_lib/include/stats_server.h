@@ -19,47 +19,54 @@ struct topk_obj_info{
     uint32_t count;
 };
 
-extern uint32_t stats_stage;
-
-extern volatile bool clean_flag;
-//extern volatile uint32_t stats_phase[NC_MAX_LCORES];
-extern topk_obj_info merge_to_info_list[NC_MAX_LCORES * TOPK];
-extern topk_obj_info lcore_to_info_list[NC_MAX_LCORES][TOPK + 1];
-
-extern uint32_t lock_stat_flag;
-extern volatile uint32_t upd_obj_flag;
-extern uint32_t upd_obj_num;
-
-extern cold_obj_info co_info;
-extern cold_obj_info co_info_heap[TOPK];
-
-extern hot_obj_info ho_info;
-extern hot_obj_info ho_info_heap[TOPK];
-extern uint32_t ho_num;
-
-extern upd_obj_info uo_info;
-extern upd_obj_info uo_info_list[TOPK];
-extern upd_obj_info uo_info_pernode_list[NUM_BACKENDNODE][TOPK];
-extern uint32_t uo_info_num_pernode_list[NUM_BACKENDNODE];
-extern uint32_t uo_num;
-
-extern std::unordered_map<uint_obj, uint32_t> stats_0[NC_MAX_LCORES];
-extern std::unordered_map<uint_obj, uint32_t> stats_1[NC_MAX_LCORES];
-
-uint32_t server_stats_loop();
-void stats_update(uint_obj obj, uint32_t stats_id);
-void minheap_downAdjust(topk_obj_info heap[], int low, int high);
-
-void move_appdata_fromSDPtoBS(upd_obj_info uo_info_list[]);
-void move_appdata_fromBStoSDP(upd_obj_info uo_info_list[]);
-
-
 struct throughput_statistics {
     uint64_t tx;
     uint64_t rx;
     uint64_t last_tx;
     uint64_t last_rx;
 } __rte_cache_aligned;
-extern throughput_statistics tput_stat[NC_MAX_LCORES];
-void print_per_core_throughput(void);
+
+
+class User {
+private:
+    static uint32_t stats_stage = STATS_COLLECT; // STATS_COLLECT // STATS_ANALYZE
+
+    static volatile bool clean_flag = 0;
+    //volatile uint32_t stats_phase[NC_MAX_LCORES];
+    static topk_obj_info merge_to_info_list[NC_MAX_LCORES * TOPK];
+    static topk_obj_info lcore_to_info_list[NC_MAX_LCORES][TOPK + 1];
+
+    static uint32_t lock_stat_flag = 0;
+    static volatile uint32_t upd_obj_flag = 0;
+    static uint32_t upd_obj_num = 0;
+
+    static cold_obj_info co_info = {};
+    static cold_obj_info co_info_heap[TOPK] = {0};
+
+    static hot_obj_info ho_info = {};
+    static hot_obj_info ho_info_heap[TOPK] = {0};
+    static uint32_t ho_num = 0;
+
+    static upd_obj_info uo_info = {};
+    static upd_obj_info uo_info_list[TOPK] = {};
+    static upd_obj_info uo_info_pernode_list[NUM_BACKENDNODE][TOPK];
+    static uint32_t uo_info_num_pernode_list[NUM_BACKENDNODE];
+    static uint32_t uo_num = 0;
+
+    static std::unordered_map<uint_obj, uint32_t> stats_0[NC_MAX_LCORES];
+    static std::unordered_map<uint_obj, uint32_t> stats_1[NC_MAX_LCORES];
+
+    static std::mutex mtx;
+
+public:
+    static uint32_t server_stats_loop();
+    static void stats_update(uint_obj obj, uint32_t stats_id);
+    static void minheap_downAdjust(topk_obj_info heap[], int low, int high);
+
+    static void move_appdata_fromSDPtoBS(upd_obj_info uo_info_list[]);
+    static void move_appdata_fromBStoSDP(upd_obj_info uo_info_list[]);
+    // static void move_appdata_fromSDPtoBS(upd_obj_info uo_info);
+    // static void move_appdata_fromBStoSDP(upd_obj_info uo_info);
+}
+
 #endif //KVS_SERVER_STATS_SERVER_H

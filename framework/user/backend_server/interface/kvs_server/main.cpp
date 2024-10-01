@@ -11,17 +11,9 @@
 
 #include "kvs_app.h"
 
-void move_appdata_fromSDPtoBS(upd_obj_info uo_info_list[]){
-    /* USER_REGION */
-}
-void move_appdata_fromBStoSDP(upd_obj_info uo_info_list[]){
-    /* USER_REGION */
-}
-
-
 int32_t user_loop(void *arg) {
     if (rte_lcore_id() == 0) {
-        server_stats_loop();
+        User::server_stats_loop();
     }
     else {
         /*** APP region begins ***/
@@ -138,7 +130,7 @@ int32_t user_loop(void *arg) {
 
                 /** UPDATE_STATS region begins **/
                 uint_obj obj = key;
-                stats_update(obj, rx_queue_id - 1);
+                User::stats_update(obj, rx_queue_id - 1);
                 /** UPDATE_STATS region ends **/
 
             }
