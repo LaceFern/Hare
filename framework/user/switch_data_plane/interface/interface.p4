@@ -1,45 +1,24 @@
-/* USER_REGION_0 begins*/
+
+/* USER_REGION_0 begins */
 #include "kvs.p4"
-/* USER_REGION_0 ends*/
+/* USER_REGION_0 ends */
 
 /***************** H E A D E R *********************/
-/* USER_REGION_1 begins*/
-header values{
+/* USER_REGION_1 begins */
+header app_header_extension_t{
     bit<VALSEG_WIDTH> value_0;
-    bit<VALSEG_WIDTH> value_1;
-    bit<VALSEG_WIDTH> value_2;
-    bit<VALSEG_WIDTH> value_3;
-    bit<VALSEG_WIDTH> value_4;
-    bit<VALSEG_WIDTH> value_5;
-    bit<VALSEG_WIDTH> value_6;
-    bit<VALSEG_WIDTH> value_7;
-    bit<VALSEG_WIDTH> value_8;
-    bit<VALSEG_WIDTH> value_9;
-    bit<VALSEG_WIDTH> value_10;
-    bit<VALSEG_WIDTH> value_11;
-    bit<VALSEG_WIDTH> value_12;
-    bit<VALSEG_WIDTH> value_13;
-    bit<VALSEG_WIDTH> value_14;
-    bit<VALSEG_WIDTH> value_15;
-    bit<VALSEG_WIDTH> value_16;
-    bit<VALSEG_WIDTH> value_17;
-    bit<VALSEG_WIDTH> value_18;
-    bit<VALSEG_WIDTH> value_19;
+//    bit<VALSEG_WIDTH> value_1;
+//    bit<VALSEG_WIDTH> value_2;
+//    bit<VALSEG_WIDTH> value_3;
 }
-/* USER_REGION_1 ends*/
-
-struct my_ingress_headers_t{
-    /* USER_REGION_2 begins*/
-    bit<8> op;
-    bit<OBJSEG_WIDTH> obj_0;
-    app_header_extension_t values;    
-    /* USER_REGION_2 ends*/
+header app_header_t{
+    bit<8>         op_code;
+    bit<OBJSEG_WIDTH> objseg_0;
+//    bit<OBJSEG_WIDTH> objseg_1;
+//    bit<OBJSEG_WIDTH> objseg_2;
+//    bit<OBJSEG_WIDTH> objseg_3;
 }
-
-struct my_ingress_metadata_t{
-    bit<OBJIDX_WIDTH> hit_index;
-    bit<8> hit_flag;
-}
+/* USER_REGION_1 ends */
 
 
 /***************** P A R S E R *********************/
@@ -48,25 +27,26 @@ parser IngressParser(packet_in       pkt,
     out my_ingress_metadata_t        meta,
     out ingress_intrinsic_metadata_t ig_intr_md){
 
-    /* USER_REGION_3 begins*/
-    state parse_query{
-        pkt.extract(hdr.op);
-        transition select(hdr.op){
-            OP_GET: parse_obj;
+    /* USER_REGION_3 begins */
+    state parse_app{
+        pkt.extract(hdr.app.op_code);
+        meta.app.index = (bit<OBJIDX_WIDTH>) INVALID_4B;
+        transition select(hdr.app.op_code){
+            OP_GET: parse_query;
             OP_PUT: parse_datamv;
             default: accept;
         }
     }
-    state parse_obj{
-        pkt.extract(hdr.obj_0);
+    state parse_query{
+        pkt.extract(hdr.app.objseg_0);
         transition accept;
     }
     state parse_datamv{
-        pkt.extract(meta.hit_index);
-        pkt.extract(hdr.values);
+        pkt.extract(meta.app.index);
+        pkt.extract(hdr.app_ex.value_0);
         transition accept;
     }
-    /* USER_REGION_3 ends*/
+    /* USER_REGION_3 ends */
 }
 
 
@@ -79,31 +59,39 @@ control Ingress(
     inout ingress_intrinsic_metadata_for_deparser_t ig_dprsr_md,
     inout ingress_intrinsic_metadata_for_tm_t       ig_tm_md){
 
-    /* USER_REGION_4 begins*/
+    /* USER_REGION_4 begins */
     /* define_appdata{ */
-    KVS(hdr.op, meta.hit_index, hdr.values.value)
+    KVS(hdr.app.op_code, meta.app.index, hdr.app_ex.value)
     /* } */
-    /* USER_REGION_4 ends*/
+    /* USER_REGION_4 ends */
     
-    /* USER_REGION_5 starts*/
+    /* USER_REGION_5 begins */
     /* apply_queryhit{*/
-        if(hdr.op == OP_GET){
+        if(hdr.app.op_code == OP_GET){
             reflect();
-            hdr.values.setValid();
-            hdr.op = OP_GETSUCC;
-            KVS_GET_VALUE(meta.hit_index, hdr.values.value)
+            KVS_TABLE_APPLY()
+            hdr.app_ex.setValid();
+            if(meta.app.state == STATE_UPD){
+                hdr.app.op_code = OP_GETFAIL;
+            }
+            else{
+                hdr.app.op_code = OP_GETSUCC;
+            }
+        }
+        else{
+            mac_forward.apply();
         }
     /* }*/
-    /* USER_REGION_5 ends*/
+    /* USER_REGION_5 ends */
 
-    /* USER_REGION_6 ends*/
+    /* USER_REGION_6 begins */
     /* apply_datamv{*/
-    if(hdr.op == OP_PUT){
-        drop();
-        KVS_PUT_VALUE(meta.hit_index, hdr.values.value)
-    }
+        if(hdr.app.op_code == OP_PUT){
+            drop();
+            KVS_PUT_VALUE(meta.hit_index, hdr.values.value)
+        }
     /* }*/
-    /* USER_REGION_6 ends*/
+    /* USER_REGION_6 ends */
 }
 
 

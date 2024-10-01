@@ -4,19 +4,16 @@
 
 #include "types.p4"
 #include "config.p4"
-#include "resubmit.p4"
 
 /***********************  H E A D E R S  ************************/
 
-header ethernet_h
-{
+header ethernet_h{
     bit<48> dst_addr;
     bit<48> src_addr;
     bit<16> ether_type;
 }
 
-header arp_h
-{
+header arp_h{
     bit<16> hw_type;
     bit<16> proto_type;
     bit<8>  hw_addr_len;
@@ -29,8 +26,7 @@ header arp_h
     bit<32> dst_proto_addr;
 }
 
-header ipv4_h
-{
+header ipv4_h{
     bit<4>  version;
     bit<4>  ihl;
     bit<8>  diffserv;
@@ -45,8 +41,7 @@ header ipv4_h
     bit<32> dst_addr;
 }
 
-header tcp_h
-{
+header tcp_h{
     bit<16> src_port;
     bit<16> dst_port;
     bit<32> seq_no;
@@ -60,8 +55,7 @@ header tcp_h
     bit<16> urgent_ptr;
 }
 
-header udp_t
-{
+header udp_t{
     bit<16> src_port;
     bit<16> dst_port;
     bit<16> len;
@@ -70,49 +64,47 @@ header udp_t
 
 /* Customized struct */
 
-header ctrl_header_t
-{
-    oper_t  op_code;
+header ctrl_header_t{
+    bit<8>  op_code;
+    bit<OBJIDX_WIDTH> index;
+    bit<COUNTER_WIDTH> counter_0;
+//    bit<COUNTER_WIDTH> counter_1;
+//    bit<COUNTER_WIDTH> counter_2;
+//    bit<COUNTER_WIDTH> counter_3;
 
-    bit<32> index;
-    bit<32> counter_0;
-    bit<32> counter_1;
-    bit<32> counter_2;
-    bit<32> counter_3;
-    bit<32> counter_4;
-    bit<32> counter_5;
-    bit<32> counter_6;
-    bit<32> counter_7;
-
-    bit<8>  ack;
 }
 
-header kv_header_t
-{
-    oper_t         op_code;
-    bit<8>  valid_len;
-    bit<KEY_WIDTH> key;
+/* USER_REGION_1 begins */
+/* USER_REGION_1 ends */
+
+header app_meta_t{
+    bit<OBJIDX_WIDTH> segidx_0;
+//    bit<OBJIDX_WIDTH> segidx_1;
+//    bit<OBJIDX_WIDTH> segidx_2;
+    bit<OBJIDX_WIDTH> index; //not segidx_3, but (final) index
+    bit<1> statistic_flag;
+    bit<STATE_WIDTH> state;
+    bit<7> padding;
 }
 
-/* USER_REGION_1 begins*/
-/* USER_REGION_1 ends*/
+struct my_ingress_headers_t{
 
-struct my_ingress_headers_t
-{
-    /* USER_REGION_2 begins*/
-    /* USER_REGION_2 ends*/
+    ethernet_h ethernet;
+    arp_h      arp;
+    ipv4_h     ipv4;
+    tcp_h      tcp;
+    udp_t      udp;
+
+    ctrl_header_t    ctrl;
+    
+    app_header_t    app;    
+    app_header_extension_t    app_ex;    
 }
 
 /******  G L O B A L   I N G R E S S   M E T A D A T A  *********/
 
-struct my_ingress_metadata_t
-{
-    bit<32> dst_ipv4;
-    // bit<4>  op_type; 
-
-    // bridge_md_t bridge_md;
-    bit<OBJIDX_WIDTH> hit_index;
-    bit<8> hit_flag;
+struct my_ingress_metadata_t{
+    app_meta_t app;
 }
 
 /***********************  H E A D E R S  ************************/
@@ -120,19 +112,17 @@ struct my_ingress_metadata_t
 struct my_egress_headers_t
 {
     ethernet_h ethernet;
+    arp_h      arp;
     ipv4_h     ipv4;
+    tcp_h      tcp;
     udp_t      udp;
-
-    kv_header_t      kv;
-    kv_data_header_t kv_data;
 }
 
 /********  G L O B A L   E G R E S S   M E T A D A T A  *********/
 
 struct my_egress_metadata_t
 {
-    MirrorId_t      mirror_session;
-    egress_mirror_h egress_mirror;
+    app_meta_t app;
 }
 
 

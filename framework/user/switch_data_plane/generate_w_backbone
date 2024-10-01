@@ -1,0 +1,170 @@
+import os
+import re
+import shutil
+import subprocess
+
+def extract_user_regions(file_path):
+    """Extract all user regions from the given file."""
+    with open(file_path, 'r', encoding='utf-8', errors='ignore') as f:
+        content = f.read()
+
+    # Regex pattern to match user regions: /* USER_REGION_xxx begins */ ... /* USER_REGION_xxx ends */
+    # pattern = re.compile(r'/\* USER_REGION_(\d+) begins \*/(.*?)\*/ USER_REGION_\1 ends \*/', re.DOTALL)
+    pattern = re.compile(r'/\* USER_REGION_(\d+) begins \*/(.*?)\s*/\* USER_REGION_\1 ends \*/', re.DOTALL)
+
+    regions = {}
+    for match in pattern.finditer(content):
+        region_id = match.group(1)
+        region_code = match.group(2)
+        regions[region_id] = region_code.strip()  # Strip to remove unnecessary leading/trailing spaces
+    print(regions)
+    return regions
+
+def replace_user_regions_in_file(file_path, regions):
+    """Replace corresponding user regions in the file, removing any existing code in the region first."""
+    try:
+        with open(file_path, 'r', encoding='utf-8', errors='ignore') as f:
+            content = f.read()
+    except UnicodeDecodeError:
+        print(f"Unicode decoding error in file: {file_path}")
+        return
+
+    for region_id, region_code in regions.items():
+        # Pattern to find the corresponding USER_REGION in the target file
+        pattern = re.compile(r'(/\* USER_REGION_' + region_id + r' begins \*/)(.*?)(/\* USER_REGION_' + region_id + r' ends \*/)', re.DOTALL)
+
+        # Replace the content between the USER_REGION markers with the new code
+        content = re.sub(pattern, r'\1\n' + region_code + r'\n\3', content)
+
+    with open(file_path, 'w', encoding='utf-8') as f:
+        f.write(content)
+
+def copy_directory(src_dir, dest_dir):
+    """Copy directory B to directory C."""
+    if os.path.exists(dest_dir):
+        shutil.rmtree(dest_dir)  # Remove existing destination directory if it exists
+    shutil.copytree(src_dir, dest_dir)
+    print(f"Copied {src_dir} to {dest_dir}")
+
+def process_subdirectory(dir_a, dir_c_subdir, filename_a):
+    """Process only the specified subdirectory in directory C."""
+    # File in directory A
+    file_a_path = os.path.join(dir_a, filename_a)
+    
+    if not os.path.exists(file_a_path):
+        print(f"File {filename_a} not found in directory {dir_a}")
+        return
+    
+    # Extract regions from file A
+    user_regions = extract_user_regions(file_a_path)
+
+    # Iterate through all files in the specified subdirectory of directory C
+    for root, _, files in os.walk(dir_c_subdir):
+        for file in files:
+            file_c_path = os.path.join(root, file)
+            replace_user_regions_in_file(file_c_path, user_regions)
+            print(f"Updated {file_c_path}")
+
+def process_directories(dir_a, dir_b, dir_c, subdir_in_c, filename_a):
+    """Process the files in directory C (a copy of directory B) but only in the specified subdirectory."""
+    # Copy directory B to directory C
+    copy_directory(dir_b, dir_c)
+
+    # Create the full path to the subdirectory in C
+    dir_c_subdir = os.path.join(dir_c, subdir_in_c)
+
+    if not os.path.exists(dir_c_subdir):
+        print(f"Subdirectory {dir_c_subdir} does not exist.")
+        return
+
+    # Process only the files in the specified subdirectory of C
+    process_subdirectory(dir_a, dir_c_subdir, filename_a)
+
+
+def copy_except_a(src_dir, dest_dir, subdir_in_c, a_file_name="a"):
+    """
+    Copies all files from src_dir to dest_dir/subdir_in_c except the file named a_file_name.
+    
+    :param src_dir: The source directory (A).
+    :param dest_dir: The destination directory (C).
+    :param subdir_in_c: The subdirectory in C to copy files to.
+    :param a_file_name: The file to exclude from copying (default is 'a').
+    """
+    # Create the destination subdirectory if it doesn't exist
+    dest_subdir = os.path.join(dest_dir, subdir_in_c)
+    os.makedirs(dest_subdir, exist_ok=True)
+    
+    # Iterate through the source directory
+    for item in os.listdir(src_dir):
+        src_path = os.path.join(src_dir, item)
+        dest_path = os.path.join(dest_subdir, item)
+        
+        # Skip the file named 'a' (or any file passed in a_file_name)
+        if item == a_file_name:
+            continue
+        
+        # Copy file or directory
+        if os.path.isfile(src_path):
+            shutil.copy2(src_path, dest_path)
+        elif os.path.isdir(src_path):
+            shutil.copytree(src_path, dest_path, dirs_exist_ok=True)
+    
+    print(f"Files from {src_dir} copied to {dest_subdir}, except '{a_file_name}'.")
+
+def execute_build_script(dest_dir, target_subdir):
+    """
+    Navigate to C directory's specified subdirectory, create a build directory,
+    and execute the build script.
+
+    :param dest_dir: The destination directory (C).
+    :param target_subdir: The subdirectory in C where the build should happen.
+    """
+    # Navigate to the target subdirectory
+    target_path = os.path.join(dest_dir, target_subdir)
+    
+    if not os.path.isdir(target_path):
+        raise FileNotFoundError(f"The target directory {target_path} does not exist.")
+    
+    try:
+        # Execute the build script commands
+        os.makedirs(os.path.join(target_path, 'build'), exist_ok=True)
+
+        # Step 1: mkdir build && cd build
+        build_dir = os.path.join(target_path, 'build')
+        os.chdir(build_dir)
+        
+        # Step 2: cmake ../
+        subprocess.run(['cmake', '../'], check=True)
+
+        # Step 3: cd p4src/p4build && make && make install
+        p4build_dir = os.path.join(target_path, 'p4src', 'p4build')
+        if os.path.isdir(p4build_dir):
+            os.chdir(p4build_dir)
+            subprocess.run(['make'], check=True)
+            subprocess.run(['make', 'install'], check=True)
+
+        # Step 4: cd ../../
+        os.chdir(target_path)
+
+        # # Step 5: cd controller && make
+        # controller_dir = os.path.join(target_path, 'controller')
+        # if os.path.isdir(controller_dir):
+        #     os.chdir(controller_dir)
+        #     subprocess.run(['make'], check=True)
+            
+        print("Build process completed successfully.")
+
+    except Exception as e:
+        print(f"Error during the build process: {e}")
+
+if __name__ == "__main__":
+    dir_a = "./interface"  
+    dir_b = "./backbone"  
+    dir_c = "./results"  
+    subdir_in_c = "./P4/p4src"
+    filename_a = "interface.p4"  
+
+    process_directories(dir_a, dir_b, dir_c, subdir_in_c, filename_a)
+    copy_except_a(dir_a, dir_c, subdir_in_c, filename_a)
+    execute_build_script(dir_c, "./P4")
+

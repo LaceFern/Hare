@@ -1,0 +1,1 @@
+Configurate config.json and run generate_w_backbone.py under each directory to generate executable files.
