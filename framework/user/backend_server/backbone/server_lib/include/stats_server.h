@@ -29,29 +29,29 @@ struct throughput_statistics {
 
 class User {
 private:
-    static uint32_t stats_stage = STATS_COLLECT; // STATS_COLLECT // STATS_ANALYZE
+    static uint32_t stats_stage;
 
-    static volatile bool clean_flag = 0;
+    static volatile bool clean_flag;
     //volatile uint32_t stats_phase[NC_MAX_LCORES];
     static topk_obj_info merge_to_info_list[NC_MAX_LCORES * TOPK];
     static topk_obj_info lcore_to_info_list[NC_MAX_LCORES][TOPK + 1];
 
-    static uint32_t lock_stat_flag = 0;
-    static volatile uint32_t upd_obj_flag = 0;
-    static uint32_t upd_obj_num = 0;
+    static uint32_t lock_stat_flag;
+    static volatile uint32_t upd_obj_flag;
+    static uint32_t upd_obj_num;
 
-    static cold_obj_info co_info = {};
-    static cold_obj_info co_info_heap[TOPK] = {0};
+    static cold_obj_info co_info;
+    static cold_obj_info co_info_heap[TOPK];
 
-    static hot_obj_info ho_info = {};
-    static hot_obj_info ho_info_heap[TOPK] = {0};
-    static uint32_t ho_num = 0;
+    static hot_obj_info ho_info;
+    static hot_obj_info ho_info_heap[TOPK];
+    static uint32_t ho_num;
 
-    static upd_obj_info uo_info = {};
-    static upd_obj_info uo_info_list[TOPK] = {};
+    static upd_obj_info uo_info;
+    static upd_obj_info uo_info_list[TOPK];
     static upd_obj_info uo_info_pernode_list[NUM_BACKENDNODE][TOPK];
     static uint32_t uo_info_num_pernode_list[NUM_BACKENDNODE];
-    static uint32_t uo_num = 0;
+    static uint32_t uo_num;
 
     static std::unordered_map<uint_obj, uint32_t> stats_0[NC_MAX_LCORES];
     static std::unordered_map<uint_obj, uint32_t> stats_1[NC_MAX_LCORES];
@@ -67,6 +67,6 @@ public:
     static void move_appdata_fromBStoSDP(upd_obj_info uo_info_list[]);
     // static void move_appdata_fromSDPtoBS(upd_obj_info uo_info);
     // static void move_appdata_fromBStoSDP(upd_obj_info uo_info);
-}
+};
 
 #endif //KVS_SERVER_STATS_SERVER_H
