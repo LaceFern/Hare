@@ -1,0 +1,154 @@
+import os
+import shutil
+import json
+import re
+import subprocess
+
+def copy_directory(src_dir, dest_dir):
+    """Copy directory B to directory C."""
+    if os.path.exists(dest_dir):
+        shutil.rmtree(dest_dir)  # Remove existing destination directory if it exists
+    shutil.copytree(src_dir, dest_dir)
+    print(f"Copied {src_dir} to {dest_dir}")
+
+def process_directories(dir_a, dir_b, dir_c, subdir_in_c, filename_a):
+    """Process the files in directory C (a copy of directory B) but only in the specified subdirectory."""
+    # Copy directory B to directory C
+    copy_directory(dir_b, dir_c)
+
+def copy_except_a(src_dir, dest_dir, subdir_in_c, a_file_name="a"):
+    """
+    Copies all files from src_dir to dest_dir/subdir_in_c except the file named a_file_name.
+    
+    :param src_dir: The source directory (A).
+    :param dest_dir: The destination directory (C).
+    :param subdir_in_c: The subdirectory in C to copy files to.
+    :param a_file_name: The file to exclude from copying (default is 'a').
+    """
+    # Create the destination subdirectory if it doesn't exist
+    dest_subdir = os.path.join(dest_dir, subdir_in_c)
+    os.makedirs(dest_subdir, exist_ok=True)
+    
+    # Iterate through the source directory
+    for item in os.listdir(src_dir):
+        src_path = os.path.join(src_dir, item)
+        dest_path = os.path.join(dest_subdir, item)
+        
+        # Skip the file named 'a' (or any file passed in a_file_name)
+        if item == a_file_name:
+            continue
+        
+        # Copy file or directory
+        if os.path.isfile(src_path):
+            shutil.copy2(src_path, dest_path)
+        elif os.path.isdir(src_path):
+            shutil.copytree(src_path, dest_path, dirs_exist_ok=True)
+    
+    print(f"Files from {src_dir} copied to {dest_subdir}, except '{a_file_name}'.")
+
+def execute_build_script(dest_dir, target_subdir):
+    """
+    Navigate to C directory's specified subdirectory, create a build directory,
+    and execute the build script.
+
+    :param dest_dir: The destination directory (C).
+    :param target_subdir: The subdirectory in C where the build should happen.
+    """
+    # Navigate to the target subdirectory
+    target_path = os.path.join(dest_dir, target_subdir)
+    
+    if not os.path.isdir(target_path):
+        raise FileNotFoundError(f"The target directory {target_path} does not exist.")
+    
+    try:
+        # Execute the build script commands
+        os.makedirs(os.path.join(target_path, 'build'), exist_ok=True)
+
+        # Step 1: mkdir build && cd build
+        build_dir = os.path.join(target_path, 'build')
+        os.chdir(build_dir)
+        
+        # Step 2: cmake ../
+        subprocess.run(['cmake', '../'], check=True)
+
+        # Step 3: cd p4src/p4build && make && make install
+        p4build_dir = os.path.join(target_path, 'p4src', 'p4build')
+        if os.path.isdir(p4build_dir):
+            os.chdir(p4build_dir)
+            subprocess.run(['make'], check=True)
+            subprocess.run(['make', 'install'], check=True)
+
+        # Step 4: cd ../../
+        os.chdir(target_path)
+
+        # # Step 5: cd controller && make
+        # controller_dir = os.path.join(target_path, 'controller')
+        # if os.path.isdir(controller_dir):
+        #     os.chdir(controller_dir)
+        #     subprocess.run(['make'], check=True)
+            
+        print("Build process completed successfully.")
+
+    except Exception as e:
+        print(f"Error during the build process: {e}")
+
+
+if __name__ == "__main__":
+    dir_a = "./interface"  
+    dir_b = "./backbone"  
+    dir_c = "./results"  
+    subdir_in_c = "./server_lib/app"
+    filename_a = ""  
+    process_directories(dir_a, dir_b, dir_c, subdir_in_c, filename_a)
+    copy_except_a(dir_a, dir_c, subdir_in_c, filename_a)
+
+    with open('../config.json', 'r') as json_file:
+        data = json.load(json_file)
+
+    with open(dir_c + '/server_lib/extern/ctrl_lib/include/general_ctrl.h', 'r') as header_file:
+        header_content = header_file.readlines()
+
+    replace_dict = {
+        '#define MAX_CACHE_SIZE': f'#define MAX_CACHE_SIZE {data["offloaded_object_num"]}',
+        '#define WAIT_MS': f'#define WAIT_MS {data["waiting_time_ms"]}',
+        '#define TOPK': f'#define TOPK {data["K"]}',
+        '#define NUM_BACKENDNODE': f'#define NUM_BACKENDNODE {data["backend_server_thread_num"]}'
+    }
+
+    new_header_content = []
+    for line in header_content:
+        replaced = False
+        for key, value in replace_dict.items():
+            if line.startswith(key):
+                new_header_content.append(f'{value}\n')
+                replaced = True
+                break
+        if not replaced:
+            new_header_content.append(line)
+
+    with open(dir_c + '/server_lib/extern/ctrl_lib/include/general_ctrl.h', 'w') as header_file:
+        header_file.writelines(new_header_content)
+
+    #####
+    with open(dir_c + '/server_lib/extern/ctrl_lib/src/general_ctrl.cpp', 'r') as file:
+        header_content = file.read()
+
+        ip_list_str = ",\n    ".join([f'(uint8_t *)"{ip}"' for ip in data["backend_server_ips"]])
+        mac_list_str = ",\n    ".join([f'(uint8_t *)"{mac}"' for mac in data["backend_server_macs"]])
+
+        header_content = re.sub(
+            r'uint8_t \*backend_node_ip_list\[NUM_BACKENDNODE\] = \{[^}]+\};',
+            f'uint8_t *backend_node_ip_list[NUM_BACKENDNODE] = {{\n    {ip_list_str}\n}};',
+            header_content
+        )
+
+        header_content = re.sub(
+            r'uint8_t \*backend_node_mac_list\[NUM_BACKENDNODE\] = \{[^}]+\};',
+            f'uint8_t *backend_node_mac_list[NUM_BACKENDNODE] = {{\n    {mac_list_str}\n}};',
+            header_content
+        )
+
+    with open(dir_c + '/server_lib/extern/ctrl_lib/src/general_ctrl.cpp', 'w') as file:
+        file.write(header_content)
+
+    execute_build_script(dir_c, "./server_lib")
