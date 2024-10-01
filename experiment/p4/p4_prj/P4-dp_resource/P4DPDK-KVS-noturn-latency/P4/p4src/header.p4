@@ -90,6 +90,7 @@ header ctrl_header_t
 header kv_header_t
 {
     oper_t         op_code;
+    bit<8>  valid_len;
     bit<KEY_WIDTH_SEG_FIRST> key_0;
     bit<KEY_WIDTH_SEG_OTHERS> key_1;
     bit<KEY_WIDTH_SEG_OTHERS> key_2;

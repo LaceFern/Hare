@@ -91,6 +91,7 @@ header kv_header_t
 {
     // bit<16> clientID;
     oper_t         op_code;
+    bit<8>  valid_len;
     bit<KEY_WIDTH> key;
 }
 

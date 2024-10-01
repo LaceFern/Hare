@@ -158,7 +158,7 @@ uint32_t BKDRHash(char *str, uint32_t len)
     // {
     //     hash = hash * seed + (*str++);
     // }
-    return (hash & 0x7FFFFF); //哈希出的最终范�???0-8388607
+    return (hash & 0x7FFFFF); //哈希出的最终范�????0-8388607
 }
 
 
@@ -171,6 +171,7 @@ uint32_t BKDRHash(char *str, uint32_t len)
 
 typedef struct  MessageHeader_ {
     uint8_t     opType;
+    uint8_t     keyLen;
     unsigned char        key[KEY_BYTES];
     uint8_t     valueLen;
     unsigned char        value[VALUE_BYTES];

@@ -212,6 +212,7 @@ typedef struct  MessageHeader_KVSS {
 typedef struct  MessageHeader_KVSL {
     // uint16_t     clientID;
     uint8_t     opType;
+    uint8_t     keyLen;
     unsigned char        key[KEY_BYTES];
     uint8_t     valueLen;
     uint64_t    value[16];

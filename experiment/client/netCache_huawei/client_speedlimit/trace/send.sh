@@ -1,9 +1,0 @@
-# scp -r "/home/zxy/tt/dpdk-21.05/examples/netlock_huawei/client_code_v9_zipf_mul_hb/trace/res_zipf" zxy@192.168.189.8:"/home/zxy/tt/dpdk-21.05/examples/netlock_huawei/client_code_v9_zipf_mul_hb/trace/"
-# scp -r "/home/zxy/tt/dpdk-21.05/examples/netlock_huawei/client_code_v9_zipf_mul_hb/trace/res_zipf_hc" zxy@192.168.189.8:"/home/zxy/tt/dpdk-21.05/examples/netlock_huawei/client_code_v9_zipf_mul_hb/trace/"
-# scp -r "/home/zxy/tt/dpdk-21.05/examples/netlock_huawei/client_code_v9_zipf_mul_hb/trace/res_rect" zxy@192.168.189.8:"/home/zxy/tt/dpdk-21.05/examples/netlock_huawei/client_code_v9_zipf_mul_hb/trace/"
-# scp -r "/home/zxy/tt/dpdk-21.05/examples/netlock_huawei/client_code_v9_zipf_mul_hb/trace/res_rect_hc" zxy@192.168.189.8:"/home/zxy/tt/dpdk-21.05/examples/netlock_huawei/client_code_v9_zipf_mul_hb/trace/"
-
-# scp -r "/home/zxy/tt/dpdk-21.05/examples/netlock_huawei/client_code_v9_zipf_mul_hb/trace/res_zipf" zxy@192.168.189.9:"/home/zxy/tt/dpdk-21.05/examples/netlock_huawei/client_code_v9_zipf_mul_hb/trace/"
-scp -r "/home/zxy/tt/dpdk-21.05/examples/netlock_huawei/client_code_v9_zipf_mul_hb/trace/res_zipf_hc" zxy@192.168.189.9:"/home/zxy/tt/dpdk-21.05/examples/netlock_huawei/client_code_v9_zipf_mul_hb/trace/"
-scp -r "/home/zxy/tt/dpdk-21.05/examples/netlock_huawei/client_code_v9_zipf_mul_hb/trace/res_rect" zxy@192.168.189.9:"/home/zxy/tt/dpdk-21.05/examples/netlock_huawei/client_code_v9_zipf_mul_hb/trace/"
-scp -r "/home/zxy/tt/dpdk-21.05/examples/netlock_huawei/client_code_v9_zipf_mul_hb/trace/res_rect_hc" zxy@192.168.189.9:"/home/zxy/tt/dpdk-21.05/examples/netlock_huawei/client_code_v9_zipf_mul_hb/trace/"

@@ -176,6 +176,7 @@ header ctrl_ack_header_t
 header kv_header_t
 {
     oper_t         op_code;
+    bit<8>  valid_len;
     bit<KEY_REGWIDTH> key_0;
     bit<KEY_REGWIDTH> key_1;
     bit<KEY_REGWIDTH> key_2;

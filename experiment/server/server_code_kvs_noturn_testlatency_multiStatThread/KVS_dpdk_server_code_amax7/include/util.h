@@ -171,6 +171,7 @@ uint32_t BKDRHash(char *str, uint32_t len)
 
 typedef struct  MessageHeader_ {
     uint8_t     opType;
+    uint8_t     keyLen;
     unsigned char        key[KEY_BYTES];
     uint8_t     valueLen;
     unsigned char        value[VALUE_BYTES];
