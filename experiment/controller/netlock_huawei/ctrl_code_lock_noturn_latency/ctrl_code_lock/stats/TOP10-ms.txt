@@ -1,3 +1,0 @@
-average_analyze_time = 0.973719 ms
-average_update_time = 0.524285 ms
-average_clean_time = 0.150021 ms

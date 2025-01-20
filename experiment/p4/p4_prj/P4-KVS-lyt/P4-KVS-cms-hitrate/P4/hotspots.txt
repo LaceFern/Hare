@@ -1,1 +1,0 @@
-hit_rate_ini:	0.0482301	miss_ratio_ini:	1
